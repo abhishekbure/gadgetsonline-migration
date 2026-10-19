@@ -1,0 +1,91 @@
+@model GadgetsOnline.ViewModel.ShoppingCartViewModel
+@{ ViewBag.Title = "Shopping Cart"; }
+
+<script src="~/Scripts/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">$(function () {
+        // Document.ready -> link up remove event handler
+        $(".RemoveLink").click(function () {
+            // Get the id from the link
+            var recordToDelete = $(this).attr("data-id");
+
+            if (recordToDelete != '') {
+
+                // Perform the ajax post
+                $.post("/ShoppingCart/RemoveFromCart", { "id": recordToDelete },
+                    function (data) {
+                        // Successful requests get here
+                        // Update the page elements
+                        if (data.itemCount == 0) {
+                            $('#row-' + data.deleteId).fadeOut('slow');
+                        } else {
+                            $('#item-count-' + data.deleteId).text(data.itemCount);
+                        }
+
+                        $('#cart-total').text(data.cartTotal);
+                        $('#update-message').text(data.message);
+                        $('#cart-status').text('Cart (' + data.cartCount + ')');
+                    });
+            }
+        });
+
+    });
+</script>
+<h3>
+    <em>Review</em> your cart:
+</h3>
+<p class="button">
+    @Html.ActionLink("Checkout >>", "AddressAndPayment", "Checkout")
+</p>
+<div id="update-message">
+</div>
+@if (Model.CartItems.Count > 0)
+{
+<table>
+    <tr>
+        <th>
+            Product
+        </th>
+        <th>
+            Price (each)
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.CartItems)
+    {
+<tr id="row-@item.ProductId">
+    <td>
+        @Html.ActionLink(item.Product.Name, "Details", "Store", new { id = item.ProductId }, null)
+    </td>
+    <td>
+        @item.Product.Price.ToString("C")
+    </td>
+    <td id="item-count-@item.ProductId">
+        @item.Count
+    </td>
+    <td>
+        @Html.ActionLink("Remove from cart", "RemoveFromCart", "ShoppingCart", new { id = item.ProductId }, null)
+        <a href="#" class="RemoveLink" data-id="@item.ProductId">Remove from cart</a>
+    </td>
+</tr>
+}
+    <tr>
+        <td>
+            Total
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td id="cart-total">
+            @Model.CartTotal.ToString("C")
+        </td>
+    </tr>
+</table>
+}
+else
+{
+    <p>Your cart is empty. <a href="/Store">Browse our store</a></p>
+}

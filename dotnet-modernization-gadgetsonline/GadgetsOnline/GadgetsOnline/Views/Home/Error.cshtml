@@ -1,0 +1,12 @@
+@{
+    ViewBag.Title = "Error " + ViewBag.StatusCode;
+}
+<div style="text-align:center; padding: 60px 20px;">
+    <h1 style="font-size:72px; color:#c0392b; margin:0;">@ViewBag.StatusCode</h1>
+    <h2 style="color:#555;">@ViewBag.Message</h2>
+    <p>
+        @Html.ActionLink("← Back to Home", "Index", "Home", null, new { style = "color:#e74c3c;" })
+        &nbsp;|&nbsp;
+        @Html.ActionLink("Browse Store", "Index", "Store", null, new { style = "color:#e74c3c;" })
+    </p>
+</div>
