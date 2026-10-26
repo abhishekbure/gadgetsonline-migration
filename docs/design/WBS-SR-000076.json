@@ -31,7 +31,7 @@
       "depends_on": [],
       "integrates_after": [],
       "ac": [
-        "GOM-3-AC1"
+        "AC-GOM-3"
       ]
     },
     {
@@ -49,7 +49,7 @@
       ],
       "integrates_after": [],
       "ac": [
-        "GOM-4-AC1"
+        "AC-GOM-4"
       ]
     },
     {
@@ -67,7 +67,7 @@
       ],
       "integrates_after": [],
       "ac": [
-        "GOM-5-AC1"
+        "AC-GOM-5"
       ]
     },
     {
@@ -82,7 +82,7 @@
       "depends_on": [],
       "integrates_after": [],
       "ac": [
-        "GOM-6-AC1"
+        "AC-GOM-6"
       ]
     }
   ],
