@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  gadgetsonline-legacy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ./.legacy-source/GadgetsOnline/GadgetsOnline/:/inetpub/wwwroot
+    networks:
+      - gadgetsonline-net
+
+networks:
+  gadgetsonline-net:
+    driver: bridge
