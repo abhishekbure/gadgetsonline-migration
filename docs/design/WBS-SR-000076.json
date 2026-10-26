@@ -2,17 +2,17 @@
   "work_ref": "SR-000076",
   "contracts": [
     {
-      "id": "openapi-ci-status",
+      "id": "ci-status-openapi",
       "kind": "openapi",
       "path": "contracts/openapi/ci-status.yaml"
     },
     {
-      "id": "schema-coverage-report",
+      "id": "coverage-report-plan",
       "kind": "schema_plan",
       "path": "contracts/schema/coverage-report-plan.md"
     },
     {
-      "id": "schema-perf-metrics",
+      "id": "perf-metrics-plan",
       "kind": "schema_plan",
       "path": "contracts/schema/perf-metrics-plan.md"
     }
@@ -21,72 +21,77 @@
     {
       "id": "GOM-3-COVERAGE",
       "role": "developer",
-      "title": "Implement Coverage Reporting",
+      "title": "Generate Coverage Report",
       "paths": [
-        "docs/design/coverage/**",
-        "scripts/coverage/**"
+        ".legacy-source/**/*.cs"
       ],
       "contracts": [
-        "schema-coverage-report"
+        "coverage-report-plan"
       ],
+      "depends_on": [],
+      "integrates_after": [],
       "ac": [
-        "Coverage report generated for the entire legacy codebase"
+        "GOM-3"
       ]
     },
     {
       "id": "GOM-4-CI",
-      "role": "devops_engineer",
-      "title": "Implement CI Pipeline",
+      "role": "developer",
+      "title": "CI Pipeline Integration",
       "paths": [
-        ".github/workflows/**",
-        "scripts/ci/**"
+        ".github/workflows/gmmcode-ci.yml"
       ],
       "contracts": [
-        "openapi-ci-status"
+        "ci-status-openapi"
       ],
       "depends_on": [
         "GOM-3-COVERAGE"
       ],
+      "integrates_after": [],
       "ac": [
-        "CI pipeline runs every existing test on each pull request"
+        "GOM-4"
       ]
     },
     {
       "id": "GOM-5-PERF",
       "role": "developer",
-      "title": "Implement Performance Benchmarking",
+      "title": "Baseline Performance Benchmarks",
       "paths": [
-        "tests/performance/**",
-        "scripts/perf/**"
+        "scripts/benchmark.ps1"
       ],
       "contracts": [
-        "schema-perf-metrics"
+        "perf-metrics-plan"
       ],
+      "depends_on": [
+        "GOM-4-CI"
+      ],
+      "integrates_after": [],
       "ac": [
-        "Baseline performance benchmarks captured"
+        "GOM-5"
       ]
     },
     {
       "id": "GOM-6-CONTAINER",
-      "role": "devops_engineer",
-      "title": "Containerize Legacy Environment",
+      "role": "developer",
+      "title": "Containerized Dev Environment",
       "paths": [
         "Dockerfile",
-        "docker-compose.yml",
-        "scripts/docker/**"
+        "docker-compose.yml"
       ],
+      "contracts": [],
+      "depends_on": [],
+      "integrates_after": [],
       "ac": [
-        "Containerized local dev environment for the legacy codebase"
+        "GOM-6"
       ]
     }
   ],
   "critical_modules": [
     "CI Pipeline",
-    "Containerized Environment"
+    "Docker Environment"
   ],
   "nfr": {
-    "reliability": "Containerized isolation",
-    "maintainability": "Infrastructure as Code",
-    "performance": "Baseline capture"
+    "reliability": "CI pipeline must complete within 15 minutes",
+    "maintainability": "Container environment must be reproducible via docker-compose up"
   }
 }

@@ -1,62 +1,30 @@
-# CI Status API Contract
-
-openapi: 3.0.3
-info:
-  title: CI Status API
-  description: API for querying the status and artifacts of the CI pipeline.
-  version: 1.0.0
-paths:
-  /pipeline/status:
-    get:
-      summary: Get current pipeline status
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PipelineStatus'
-  /pipeline/artifacts/{type}:
-    get:
-      summary: Get pipeline artifacts
-      parameters:
-        - name: type
-          in: path
-          required: true
-          schema:
-            type: string
-            enum: [coverage, performance, test-results]
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Artifact'
-components:
-  schemas:
-    PipelineStatus:
-      type: object
-      properties:
-        status:
-          type: string
-          enum: [running, success, failure, pending]
-        last_run:
-          type: string
-          format: date-time
-        commit_sha:
-          type: string
-    Artifact:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-        url:
-          type: string
-        created_at:
-          type: string
-          format: date-time
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CI Status API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/status": {
+      "get": {
+        "summary": "Get current CI status",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string" },
+                    "last_run": { "type": "string", "format": "date-time" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,22 +1,25 @@
-# Coverage Report Plan
+# Coverage Report Schema Plan
 
 ## Objective
-Establish a baseline for code coverage across the legacy .NET Framework 4.8 codebase.
+Define the schema for the automated coverage reports generated for the legacy .NET 4.8 codebase.
 
-## Metrics to Capture
-- **Line Coverage**: Percentage of executable lines covered by tests.
-- **Branch Coverage**: Percentage of control flow branches covered.
-- **Method Coverage**: Percentage of methods executed during testing.
+## Schema Definition
 
-## Toolchain
-- **Test Runner**: NUnit / MSTest (existing)
-- **Coverage Engine**: dotCover / OpenCover
-- **Report Format**: Cobertura / LCOV
+### Metadata
+- `timestamp`: ISO 8601 string
+- `source_commit`: Git SHA
+- `tool_version`: Version of the coverage tool used (e.g., OpenCover/dotCover)
 
-## Frequency
-- Every CI pipeline run on Pull Requests.
-- Weekly full repository scan.
+### Summary Metrics
+- `line_coverage`: Percentage (0.0 - 100.0)
+- `branch_coverage`: Percentage (0.0 - 100.0)
+- `total_lines`: Integer
+- `covered_lines`: Integer
 
-## Storage and Visualization
-- Coverage artifacts will be stored in the CI pipeline artifacts.
-- Reports will be surfaced via the CI Status API.
+### Detailed Breakdown
+- `assemblies`: List of assembly objects containing:
+    - `name`: Assembly name
+    - `coverage`: Percentage
+    - `files`: List of file objects containing:
+        - `path`: Relative file path
+        - `coverage`: Percentage
