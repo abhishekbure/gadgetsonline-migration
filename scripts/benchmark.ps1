@@ -1,4 +1,5 @@
 # Baseline Performance Benchmark Script for GadgetsOnline Legacy
+# Requirement: GOM-5-AC1
 
 $baseUrl = "http://localhost:8080/"
 $iterations = 50
@@ -10,9 +11,10 @@ Write-Host "Running $iterations iterations..."
 $results = @()
 
 for ($i = 1; $i -le $iterations; $i++) {
+    $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
     try {
-        $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
-        $response = Invoke-WebRequest -Uri $baseUrl -UseBasicParsing -Method Get
+        # Using Invoke-WebRequest with -UseBasicParsing for compatibility in PowerShell environments
+        $response = Invoke-WebRequest -Uri $baseUrl -UseBasicParsing -Method Get -TimeoutSec 5
         $stopwatch.Stop()
         
         $elapsedMs = $stopwatch.Elapsed.TotalMilliseconds
@@ -29,30 +31,37 @@ for ($i = 1; $i -le $iterations; $i++) {
     }
     catch {
         $stopwatch.Stop()
+        $statusCode = 0
+        $elapsedMs = $stopwatch.Elapsed.TotalMilliseconds
         $results += [PSCustomObject]@{
             Iteration = $i
             Timestamp = (Get-Date -Format "yyyy-MM-dd HH:mm:ss")
-            StatusCode = 0
-            ResponseTimeMs = [Math]::Round($stopwatch.Elapsed.TotalMilliseconds, 2)
+            StatusCode = $statusCode
+            ResponseTimeMs = [Math]::Round($elapsedMs, 2)
             Success = $false
         }
         Write-Error "Iteration $i failed: $_"
     }
 }
 
-# Calculate averages
-$avgTime = ($results | Where-Object { $_.Success -eq $true } | Measure-Object -Property ResponseTimeMs -Average).Average
-$successRate = ($results | Where-Object { $_.Success -eq $true } | Measure-Object).Count / $iterations * 100
+# Calculate statistics
+$successfulRequests = $results | Where-Object { $_.Success -eq $true }
+$count = $successfulRequests.Count
 
 Write-Host "`n--- Benchmark Summary ---"
 Write-Host "Total Iterations: $iterations"
-Write-Host "Success Rate: $successRate%"
-if ($null -ne $avgTime) {
+Write-Host "Successful Iterations: $count"
+
+if ($count -gt 0) {
+    $avgTime = ($successfulRequests | Measure-Object -Property ResponseTimeMs -Average).Average
+    $successRate = ($count / $iterations) * 100
+    Write-Host "Success Rate: $successRate%"
     Write-Host "Average Response Time: $($avgTime)ms"
 } else {
-    Write-Host "Average Response Time: N/A (No successful requests)"
+    Write-Host "Success Rate: 0%"
+    Write-Host "Average Response Time: N/A"
 }
 
-# Export to CSV
+# Export results to CSV for auditability (GOM-5)
 $results | Export-Csv -Path $resultsFile -NoTypeInformation
 Write-Host "`nDetailed results exported to $resultsFile"
