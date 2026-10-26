@@ -5,14 +5,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    volumes:
-      - ./.legacy-source/GadgetsOnline/GadgetsOnline/:/inetpub/wwwroot
     networks:
       - gadgetsonline-net
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/"]
+      test: ["CMD", "powershell", "-Command", "Invoke-WebRequest -Uri http://localhost/ -UseBasicParsing"]
       interval: 30s
       timeout: 10s
       retries: 3
