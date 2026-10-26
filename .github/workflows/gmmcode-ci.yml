@@ -6,34 +6,27 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup .NET Framework 4.8 (Legacy Environment Simulation)
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '4.8.x'
+          dotnet-version: all
 
       - name: Restore dependencies
-        run: nuget restore ./.legacy-source/GadgetsOnline/GadgetsOnline/GadgetsOnline.sln
+        run: dotnet restore ./.legacy-source/GadgetsOnline/GadgetsOnline.sln
 
       - name: Build solution
-        run: msbuild ./.legacy-source/GadgetsOnline/GadgetsOnline/GadgetsOnline.sln /p:Configuration=Release
+        run: dotnet build ./.legacy-source/GadgetsOnline/GadgetsOnline.sln --configuration Release --no-restore
 
-      - name: Run tests
-        run: vstest.console.exe ./.legacy-source/GadgetsOnline/GadgetsOnline/GadgetsOnline.sln /logger:trx
+      - name: Run tests with coverage
+        run: dotnet test ./.legacy-source/GadgetsOnline/GadgetsOnline.sln --configuration Release --no-build --collect:"XPlat Code Coverage" --results-directory coverage
 
-      - name: Generate Coverage Report
-        run: |
-          # Placeholder for coverage generation command
-          echo "Generating coverage..."
-          mkdir -p coverage
-          touch coverage/coverage.xml
-
-      - name: Upload Artifacts
+      - name: Upload Coverage Report
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: coverage/
+          path: coverage/**/coverage.cobertura.xml
