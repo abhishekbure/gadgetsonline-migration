@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "dgSpecHash": "MmJ++CaE9ws=",
+  "success": false,
+  "projectFilePath": "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/GadgetsOnline.Tests.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.\n  Resource temporarily unavailable (api.nuget.org:443)\n  Resource temporarily unavailable",
+      "projectPath": "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/GadgetsOnline.Tests.csproj",
+      "filePath": "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/GadgetsOnline.Tests.csproj",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.\n  Resource temporarily unavailable (api.nuget.org:443)\n  Resource temporarily unavailable",
+      "projectPath": "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/GadgetsOnline.Tests.csproj",
+      "filePath": "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/GadgetsOnline.Tests.csproj",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.\n  Resource temporarily unavailable (api.nuget.org:443)\n  Resource temporarily unavailable",
+      "projectPath": "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/GadgetsOnline.Tests.csproj",
+      "filePath": "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/GadgetsOnline.Tests.csproj",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.\n  Resource temporarily unavailable (api.nuget.org:443)\n  Resource temporarily unavailable",
+      "projectPath": "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/GadgetsOnline.Tests.csproj",
+      "filePath": "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/GadgetsOnline.Tests.csproj",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "projectPath": "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/GadgetsOnline.Tests.csproj",
+      "warningLevel": 1,
+      "filePath": "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/GadgetsOnline.Tests.csproj",
+      "targetGraphs": []
+    }
+  ]
+}
