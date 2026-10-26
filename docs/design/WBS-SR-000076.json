@@ -31,7 +31,7 @@
       "depends_on": [],
       "integrates_after": [],
       "ac": [
-        "AC-001"
+        "AC-GOM-3-COVERAGE"
       ]
     },
     {
