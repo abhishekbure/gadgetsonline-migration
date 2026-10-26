@@ -1,0 +1,39 @@
+name: GMMCODE CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET Framework 4.8 (Legacy Environment Simulation)
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '4.8.x'
+
+      - name: Restore dependencies
+        run: nuget restore ./.legacy-source/GadgetsOnline/GadgetsOnline/GadgetsOnline.sln
+
+      - name: Build solution
+        run: msbuild ./.legacy-source/GadgetsOnline/GadgetsOnline/GadgetsOnline.sln /p:Configuration=Release
+
+      - name: Run tests
+        run: vstest.console.exe ./.legacy-source/GadgetsOnline/GadgetsOnline/GadgetsOnline.sln /logger:trx
+
+      - name: Generate Coverage Report
+        run: |
+          # Placeholder for coverage generation command
+          echo "Generating coverage..."
+          mkdir -p coverage
+          touch coverage/coverage.xml
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/

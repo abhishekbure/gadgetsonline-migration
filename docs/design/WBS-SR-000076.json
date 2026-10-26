@@ -1,0 +1,92 @@
+{
+  "work_ref": "SR-000076",
+  "contracts": [
+    {
+      "id": "openapi-ci-status",
+      "kind": "openapi",
+      "path": "contracts/openapi/ci-status.yaml"
+    },
+    {
+      "id": "schema-coverage-report",
+      "kind": "schema_plan",
+      "path": "contracts/schema/coverage-report-plan.md"
+    },
+    {
+      "id": "schema-perf-metrics",
+      "kind": "schema_plan",
+      "path": "contracts/schema/perf-metrics-plan.md"
+    }
+  ],
+  "items": [
+    {
+      "id": "GOM-3-COVERAGE",
+      "role": "developer",
+      "title": "Implement Coverage Reporting",
+      "paths": [
+        "docs/design/coverage/**",
+        "scripts/coverage/**"
+      ],
+      "contracts": [
+        "schema-coverage-report"
+      ],
+      "ac": [
+        "Coverage report generated for the entire legacy codebase"
+      ]
+    },
+    {
+      "id": "GOM-4-CI",
+      "role": "devops_engineer",
+      "title": "Implement CI Pipeline",
+      "paths": [
+        ".github/workflows/**",
+        "scripts/ci/**"
+      ],
+      "contracts": [
+        "openapi-ci-status"
+      ],
+      "depends_on": [
+        "GOM-3-COVERAGE"
+      ],
+      "ac": [
+        "CI pipeline runs every existing test on each pull request"
+      ]
+    },
+    {
+      "id": "GOM-5-PERF",
+      "role": "developer",
+      "title": "Implement Performance Benchmarking",
+      "paths": [
+        "tests/performance/**",
+        "scripts/perf/**"
+      ],
+      "contracts": [
+        "schema-perf-metrics"
+      ],
+      "ac": [
+        "Baseline performance benchmarks captured"
+      ]
+    },
+    {
+      "id": "GOM-6-CONTAINER",
+      "role": "devops_engineer",
+      "title": "Containerize Legacy Environment",
+      "paths": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "scripts/docker/**"
+      ],
+      "ac": [
+        "Containerized local dev environment for the legacy codebase"
+      ]
+    }
+  ],
+  "critical_modules": [
+    "CI Pipeline",
+    "Containerized Environment"
+  ],
+  "nfr": {
+    "reliability": "Containerized isolation",
+    "maintainability": "Infrastructure as Code",
+    "performance": "Baseline capture"
+  }
+}
