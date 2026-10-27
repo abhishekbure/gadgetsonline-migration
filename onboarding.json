@@ -1,0 +1,4 @@
+{
+  "build_test_commands": "docker compose run gadgetsonline-dev dotnet test .legacy-source/GadgetsOnline/GadgetsOnline.sln",
+  "smoke_commands": "docker compose up -d"
+}
