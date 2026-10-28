@@ -1,5 +1,5 @@
 {
   "build_command": "/home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/dotnet build GadgetsOnline.sln -c Release",
-  "test_command": "/home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/dotnet test GadgetsOnline.sln",
+  "test_command": "/home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/dotnet test GadgetsOnline.sln --configuration Release --logger \"junit;LogFilePath=coverage/junit-results.xml\" --collect:\"XPlat Code Coverage\" --results-directory coverage",
   "smoke_command": "docker-compose up -d"
 }
