@@ -1,5 +1,5 @@
 {
-  "build_command": "/home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.402/dotnet build GadgetsOnline.sln -c Release",
-  "test_command": "/home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.402/dotnet test GadgetsOnline.sln",
+  "build_command": "/home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/dotnet build GadgetsOnline.sln -c Release",
+  "test_command": "/home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/dotnet test GadgetsOnline.sln",
   "smoke_command": "docker-compose up -d"
 }

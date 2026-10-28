@@ -1,38 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TestRun id="a81bd85b-c8f0-4882-9512-db35a7ee629b" name="@ip-172-31-40-13 2026-10-28 14:21:42" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <Times creation="2026-10-28T14:21:42.7952813+00:00" queuing="2026-10-28T14:21:42.7952814+00:00" start="2026-10-28T14:21:40.1840477+00:00" finish="2026-10-28T14:21:42.8124734+00:00" />
-  <TestSettings name="default" id="61d1acc5-69ee-4db9-bbdc-1c9dc215adae">
-    <Deployment runDeploymentRoot="_ip-172-31-40-13_2026-10-28_14_21_42" />
+<TestRun id="cec62476-7b47-4cf5-a006-bc78ab734d13" name="@ip-172-31-40-13 2026-10-28 16:13:44" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-28T16:13:44.2012724+00:00" queuing="2026-10-28T16:13:44.2012725+00:00" start="2026-10-28T16:13:42.2823372+00:00" finish="2026-10-28T16:13:44.2147944+00:00" />
+  <TestSettings name="default" id="7bc57042-965b-4b58-a636-e4e98151dd97">
+    <Deployment runDeploymentRoot="_ip-172-31-40-13_2026-10-28_16_13_44" />
   </TestSettings>
   <Results>
-    <UnitTestResult executionId="458cba8f-d8ea-493f-891d-bb0acac0588f" testId="a09a2b6d-844b-55b1-3145-66e95f595c17" testName="GadgetsOnline.Tests.MigrationSetupTests.GOM_3_AC1_CoverageBaseline_Test" computerName="ip-172-31-40-13" duration="00:00:00.0000879" startTime="2026-10-28T14:21:42.5724566+00:00" endTime="2026-10-28T14:21:42.5726249+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="458cba8f-d8ea-493f-891d-bb0acac0588f" />
-    <UnitTestResult executionId="aca042cc-1fea-4d8b-879e-37b8b5254bfe" testId="53c687d9-a58a-504d-4b19-0de58d43b836" testName="GadgetsOnline.Tests.MigrationSetupTests.GOM_4_AC1_CIPipeline_Test" computerName="ip-172-31-40-13" duration="00:00:00.0058331" startTime="2026-10-28T14:21:42.5128215+00:00" endTime="2026-10-28T14:21:42.5437635+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aca042cc-1fea-4d8b-879e-37b8b5254bfe" />
-    <UnitTestResult executionId="6b5d93dc-7828-42f9-8b95-3767fb2ff6d6" testId="824fa72d-9f25-d62b-5f6f-8699fc3a3d87" testName="GadgetsOnline.Tests.MigrationSetupTests.GOM_6_AC1_Containerization_Test" computerName="ip-172-31-40-13" duration="00:00:00.0024567" startTime="2026-10-28T14:21:42.5737099+00:00" endTime="2026-10-28T14:21:42.5738394+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6b5d93dc-7828-42f9-8b95-3767fb2ff6d6" />
-    <UnitTestResult executionId="4094cde7-c846-4c89-8861-80a9caceb65d" testId="182b4817-7e4e-c7bc-1324-1c53a6bcedec" testName="GadgetsOnline.Tests.MigrationSetupTests.GOM_5_AC1_PerformanceBaseline_Test" computerName="ip-172-31-40-13" duration="00:00:00.0002762" startTime="2026-10-28T14:21:42.5741433+00:00" endTime="2026-10-28T14:21:42.5742539+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4094cde7-c846-4c89-8861-80a9caceb65d" />
+    <UnitTestResult executionId="53081156-0875-41be-9325-9354ba60e537" testId="824fa72d-9f25-d62b-5f6f-8699fc3a3d87" testName="GadgetsOnline.Tests.MigrationSetupTests.GOM_6_AC1_Containerization_Test" computerName="ip-172-31-40-13" duration="00:00:00.0002036" startTime="2026-10-28T16:13:44.0365328+00:00" endTime="2026-10-28T16:13:44.0366715+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="53081156-0875-41be-9325-9354ba60e537" />
+    <UnitTestResult executionId="01575f73-e20a-476a-a4e1-fd088c3e0bb0" testId="53c687d9-a58a-504d-4b19-0de58d43b836" testName="GadgetsOnline.Tests.MigrationSetupTests.GOM_4_AC1_CIPipeline_Test" computerName="ip-172-31-40-13" duration="00:00:00.0103021" startTime="2026-10-28T16:13:43.9816267+00:00" endTime="2026-10-28T16:13:44.0083472+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="01575f73-e20a-476a-a4e1-fd088c3e0bb0" />
+    <UnitTestResult executionId="08c79c21-2697-4bc1-bcf9-09f812024f5f" testId="a09a2b6d-844b-55b1-3145-66e95f595c17" testName="GadgetsOnline.Tests.MigrationSetupTests.GOM_3_AC1_CoverageBaseline_Test" computerName="ip-172-31-40-13" duration="00:00:00.0000846" startTime="2026-10-28T16:13:44.0349987+00:00" endTime="2026-10-28T16:13:44.0352848+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="08c79c21-2697-4bc1-bcf9-09f812024f5f" />
+    <UnitTestResult executionId="eaba58ee-47a7-4bff-8586-67decb5179f8" testId="182b4817-7e4e-c7bc-1324-1c53a6bcedec" testName="GadgetsOnline.Tests.MigrationSetupTests.GOM_5_AC1_PerformanceBaseline_Test" computerName="ip-172-31-40-13" duration="00:00:00.0003144" startTime="2026-10-28T16:13:44.0370083+00:00" endTime="2026-10-28T16:13:44.0371278+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eaba58ee-47a7-4bff-8586-67decb5179f8" />
   </Results>
   <TestDefinitions>
     <UnitTest name="GadgetsOnline.Tests.MigrationSetupTests.GOM_5_AC1_PerformanceBaseline_Test" storage="/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/sr-000076/dotnet-modernization-gadgetsonline/gadgetsonline/gadgetsonline.tests/bin/release/net10.0/gadgetsonline.tests.dll" id="182b4817-7e4e-c7bc-1324-1c53a6bcedec">
-      <Execution id="4094cde7-c846-4c89-8861-80a9caceb65d" />
+      <Execution id="eaba58ee-47a7-4bff-8586-67decb5179f8" />
       <TestMethod codeBase="/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.Tests/bin/Release/net10.0/GadgetsOnline.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GadgetsOnline.Tests.MigrationSetupTests" name="GOM_5_AC1_PerformanceBaseline_Test" />
     </UnitTest>
     <UnitTest name="GadgetsOnline.Tests.MigrationSetupTests.GOM_6_AC1_Containerization_Test" storage="/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/sr-000076/dotnet-modernization-gadgetsonline/gadgetsonline/gadgetsonline.tests/bin/release/net10.0/gadgetsonline.tests.dll" id="824fa72d-9f25-d62b-5f6f-8699fc3a3d87">
-      <Execution id="6b5d93dc-7828-42f9-8b95-3767fb2ff6d6" />
+      <Execution id="53081156-0875-41be-9325-9354ba60e537" />
       <TestMethod codeBase="/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.Tests/bin/Release/net10.0/GadgetsOnline.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GadgetsOnline.Tests.MigrationSetupTests" name="GOM_6_AC1_Containerization_Test" />
     </UnitTest>
     <UnitTest name="GadgetsOnline.Tests.MigrationSetupTests.GOM_3_AC1_CoverageBaseline_Test" storage="/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/sr-000076/dotnet-modernization-gadgetsonline/gadgetsonline/gadgetsonline.tests/bin/release/net10.0/gadgetsonline.tests.dll" id="a09a2b6d-844b-55b1-3145-66e95f595c17">
-      <Execution id="458cba8f-d8ea-493f-891d-bb0acac0588f" />
+      <Execution id="08c79c21-2697-4bc1-bcf9-09f812024f5f" />
       <TestMethod codeBase="/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.Tests/bin/Release/net10.0/GadgetsOnline.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GadgetsOnline.Tests.MigrationSetupTests" name="GOM_3_AC1_CoverageBaseline_Test" />
     </UnitTest>
     <UnitTest name="GadgetsOnline.Tests.MigrationSetupTests.GOM_4_AC1_CIPipeline_Test" storage="/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/sr-000076/dotnet-modernization-gadgetsonline/gadgetsonline/gadgetsonline.tests/bin/release/net10.0/gadgetsonline.tests.dll" id="53c687d9-a58a-504d-4b19-0de58d43b836">
-      <Execution id="aca042cc-1fea-4d8b-879e-37b8b5254bfe" />
+      <Execution id="01575f73-e20a-476a-a4e1-fd088c3e0bb0" />
       <TestMethod codeBase="/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.Tests/bin/Release/net10.0/GadgetsOnline.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="GadgetsOnline.Tests.MigrationSetupTests" name="GOM_4_AC1_CIPipeline_Test" />
     </UnitTest>
   </TestDefinitions>
   <TestEntries>
-    <TestEntry testId="a09a2b6d-844b-55b1-3145-66e95f595c17" executionId="458cba8f-d8ea-493f-891d-bb0acac0588f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="53c687d9-a58a-504d-4b19-0de58d43b836" executionId="aca042cc-1fea-4d8b-879e-37b8b5254bfe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="824fa72d-9f25-d62b-5f6f-8699fc3a3d87" executionId="6b5d93dc-7828-42f9-8b95-3767fb2ff6d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="182b4817-7e4e-c7bc-1324-1c53a6bcedec" executionId="4094cde7-c846-4c89-8861-80a9caceb65d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="824fa72d-9f25-d62b-5f6f-8699fc3a3d87" executionId="53081156-0875-41be-9325-9354ba60e537" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="53c687d9-a58a-504d-4b19-0de58d43b836" executionId="01575f73-e20a-476a-a4e1-fd088c3e0bb0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a09a2b6d-844b-55b1-3145-66e95f595c17" executionId="08c79c21-2697-4bc1-bcf9-09f812024f5f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="182b4817-7e4e-c7bc-1324-1c53a6bcedec" executionId="eaba58ee-47a7-4bff-8586-67decb5179f8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
   </TestEntries>
   <TestLists>
     <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
@@ -41,11 +41,11 @@
   <ResultSummary outcome="Completed">
     <Counters total="4" executed="4" passed="4" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
     <Output>
-      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.13)
-[xUnit.net 00:00:00.19]   Discovering: GadgetsOnline.Tests
-[xUnit.net 00:00:00.26]   Discovered:  GadgetsOnline.Tests
-[xUnit.net 00:00:00.31]   Starting:    GadgetsOnline.Tests
-[xUnit.net 00:00:00.45]   Finished:    GadgetsOnline.Tests
+      <StdOut>[xUnit.net 00:00:00.02] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.13)
+[xUnit.net 00:00:00.21]   Discovering: GadgetsOnline.Tests
+[xUnit.net 00:00:00.28]   Discovered:  GadgetsOnline.Tests
+[xUnit.net 00:00:00.33]   Starting:    GadgetsOnline.Tests
+[xUnit.net 00:00:00.46]   Finished:    GadgetsOnline.Tests
 </StdOut>
     </Output>
   </ResultSummary>
