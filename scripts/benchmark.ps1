@@ -1,11 +1,14 @@
 # Baseline Performance Benchmark Script for GadgetsOnline Legacy
 # Requirement: GOM-5-AC1
 
-$baseUrl = "http://localhost:8080/"
+param (
+    [string]$BaseUrl = "http://localhost:8080/"
+)
+
 $iterations = 50
 $resultsFile = "benchmark_results.csv"
 
-Write-Host "Starting baseline performance benchmarks against $baseUrl"
+Write-Host "Starting baseline performance benchmarks against $BaseUrl"
 Write-Host "Running $iterations iterations..."
 
 $results = @()
@@ -14,7 +17,7 @@ for ($i = 1; $i -le $iterations; $i++) {
     $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
     try {
         # Using Invoke-WebRequest with -UseBasicParsing for compatibility in PowerShell environments
-        $response = Invoke-WebRequest -Uri $baseUrl -UseBasicParsing -Method Get -TimeoutSec 5
+        $response = Invoke-WebRequest -Uri $BaseUrl -UseBasicParsing -Method Get -TimeoutSec 5
         $stopwatch.Stop()
         
         $elapsedMs = $stopwatch.Elapsed.TotalMilliseconds
