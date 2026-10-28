@@ -1,2 +1,7 @@
 <Solution>
+  <Folder Name="/dotnet-modernization-gadgetsonline/" />
+  <Folder Name="/dotnet-modernization-gadgetsonline/GadgetsOnline/">
+    <Project Path="dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.Tests/GadgetsOnline.Tests.csproj" />
+    <Project Path="dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/GadgetsOnline.csproj" />
+  </Folder>
 </Solution>

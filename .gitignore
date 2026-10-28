@@ -1,3 +1,14 @@
+bin/
+obj/
+__pycache__/
+.sandbox-home/
+fix_dotnet_error.sh
+BLOCKER_REPORT.txt
+.bashrc
+bin/
+obj/
+__pycache__/
+.sandbox-home/
 node_modules/
 .env
 .env.*
@@ -6,7 +17,6 @@ node_modules/
 logs/
 coverage/
 junit.xml
-__pycache__/
 .venv/
 .angular/
 .wt/
