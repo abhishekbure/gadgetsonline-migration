@@ -17,13 +17,13 @@ jobs:
           dotnet-version: all
 
       - name: Restore dependencies
-        run: dotnet restore ./.legacy-source/GadgetsOnline/GadgetsOnline.sln
+        run: dotnet restore dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln
 
       - name: Build solution
-        run: dotnet build ./.legacy-source/GadgetsOnline/GadgetsOnline.sln --configuration Release --no-restore
+        run: dotnet build dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln --configuration Release --no-restore
 
       - name: Run tests with coverage
-        run: dotnet test ./.legacy-source/GadgetsOnline/GadgetsOnline.sln --configuration Release --no-build --logger "junit;LogFilePath=coverage/junit-results.xml" --collect:"XPlat Code Coverage" --results-directory coverage
+        run: dotnet test dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln --configuration Release --no-build --logger "junit;LogFilePath=coverage/junit-results.xml" --collect:"XPlat Code Coverage" --results-directory coverage
 
       - name: Install ReportGenerator
         run: dotnet tool install --global reportgenerator
