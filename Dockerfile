@@ -8,7 +8,7 @@ WORKDIR /inetpub/wwwroot
 
 # Copy the legacy application files to the container
 # Note: In a real scenario, we would build the app first or copy the published output.
-# For this setup, we assume the files are located in dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/
+# For this setup, the files are located in dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/
 COPY dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/ .
 
 # Expose port 80 for web access
