@@ -1,5 +1,5 @@
 {
   "build_command": "dotnet build GadgetsOnline.sln -c Release -p:MaxCpuCount=1",
-  "test_command": "dotnet test GadgetsOnline.sln --configuration Release -p:MaxCpuCount=1 --logger \"junit;LogFilePath=coverage/junit-results.xml\" --collect:\"XPlat Code Coverage\" --results-directory coverage",
+  "test_command": "dotnet test GadgetsOnline.sln --configuration Release -p:MaxCpuCount=1 --logger \"trx\" --results-directory coverage",
   "smoke_command": "docker compose up -d"
 }
