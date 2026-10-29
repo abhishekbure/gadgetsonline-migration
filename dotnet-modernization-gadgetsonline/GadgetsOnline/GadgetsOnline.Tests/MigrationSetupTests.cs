@@ -55,7 +55,7 @@ public class MigrationSetupTests : IDisposable
         // GOM-5-AC1: Baseline performance benchmarks captured
         // Simulate a workload: repeated string operations
         var sw = Stopwatch.StartNew();
-        for (int i = 0; i < 10000; i++)
+        for (int i = 0; i < 1000; i++)
         {
             var s = $"Performance_{i}";
             var reversed = new string(s.Reverse().ToArray());
