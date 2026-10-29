@@ -17,25 +17,11 @@ public class MigrationSetupTests : IDisposable
         // We need to go up 6 levels to reach the root.
         _rootDir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "..", ".."));
         _coverageDir = Path.Combine(_rootDir, "coverage");
-
-        // Create the coverage folder in the test setup to ensure it exists in a clean checkout
-        if (!Directory.Exists(_coverageDir))
-        {
-            Directory.CreateDirectory(_coverageDir);
-        }
     }
 
     public void Dispose()
     {
-        try
-        {
-            // Cleanup logic if required in future
-        }
-        catch (System.Exception ex)
-        {
-            // Log exception or handle gracefully to avoid swallowing critical cleanup failures
-            Trace.WriteLine($"Cleanup failed: {ex.Message}");
-        }
+        // Cleanup logic if required in future
     }
 
     [Fact]
