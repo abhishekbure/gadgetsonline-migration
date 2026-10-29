@@ -18,7 +18,7 @@ public class MigrationSetupTests : IDisposable
         _rootDir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "..", ".."));
         _coverageDir = Path.Combine(_rootDir, "coverage");
 
-        // Option A: create the coverage folder in the test class constructor
+        // Create the coverage folder in the test setup to ensure it exists in a clean checkout
         if (!Directory.Exists(_coverageDir))
         {
             Directory.CreateDirectory(_coverageDir);
@@ -27,16 +27,13 @@ public class MigrationSetupTests : IDisposable
 
     public void Dispose()
     {
-        // Cleanup is not strictly required by the prompt but good practice if we created it.
-        // However, if the CI expects it to persist for some reason, we might skip it.
-        // Given the prompt "create it in the test setup", we'll just leave it or ensure it exists.
     }
 
     [Fact]
     public void GOM_3_AC1_CoverageBaseline_Test()
     {
         // GOM-3-AC1: Coverage report generated for the entire legacy codebase
-        // Verify that at least one Cobertura coverage file exists in a coverage directory
+        // Verify that at least one Cobertura coverage file exists in the coverage directory
         
         var coverageFiles = Directory.GetFiles(_coverageDir, "coverage.cobertura.xml", SearchOption.AllDirectories);
         Assert.NotEmpty(coverageFiles);
@@ -56,7 +53,7 @@ public class MigrationSetupTests : IDisposable
     public void GOM_5_AC1_PerformanceBaseline_Test()
     {
         // GOM-5-AC1: Baseline performance benchmarks captured
-        // Using a slightly more realistic workload: repeated string operations to simulate logic
+        // Simulate a workload: repeated string operations
         var sw = Stopwatch.StartNew();
         for (int i = 0; i < 10000; i++)
         {
@@ -85,6 +82,7 @@ public class MigrationSetupTests : IDisposable
         Assert.True(File.Exists(composePath), $"docker-compose.yml should exist at: {composePath}");
         string composeContent = File.ReadAllText(composePath);
         Assert.Contains("gadgetsonline-legacy:", composeContent);
+        Assert.Contains("image: mcr.microsoft.com/dotnet/sdk:10.0-windowsservercore-ltsc2022", composeContent);
         Assert.Contains("gadgetsonline-dev:", composeContent);
     }
 }
