@@ -5,8 +5,15 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+
+var useLocalDb = builder.Configuration.GetValue<bool>("DatabaseConfiguration:UseLocalDb");
+var connectionString = useLocalDb 
+    ? builder.Configuration.GetConnectionString("GadgetsOnlineEntities")
+    : "Server=sqlserver;Database=GadgetsOnlineDB;User Id=sa;Password=YourStrongPassword123!;TrustServerCertificate=True;";
+
 builder.Services.AddDbContext<GadgetsOnlineEntities>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("GadgetsOnlineEntities")));
+    options.UseSqlServer(connectionString));
+
 builder.Services.AddScoped<Inventory>();
 builder.Services.AddScoped<ShoppingCart>();
 builder.Services.AddScoped<OrderProcessing>();
