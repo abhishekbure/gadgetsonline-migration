@@ -6,7 +6,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<GadgetsOnlineEntities>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("GadgetsOnlineEntities")));
+{
+    var provider = builder.Configuration["DatabaseProvider"];
+    var connectionString = builder.Configuration.GetConnectionString("GadgetsOnlineEntities");
+    if (provider == "Sqlite")
+    {
+        options.UseSqlite(connectionString);
+    }
+    else
+    {
+        options.UseSqlServer(connectionString);
+    }
+});
 builder.Services.AddScoped<Inventory>();
 builder.Services.AddScoped<ShoppingCart>();
 builder.Services.AddScoped<OrderProcessing>();
