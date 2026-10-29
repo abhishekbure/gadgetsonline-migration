@@ -14,7 +14,11 @@ public class MigrationSetupTests
         // GOM-3-AC1: Coverage report generated for the entire legacy codebase
         // Verify that at least one Cobertura coverage file exists in a coverage directory
         // The requirement states the directory is at the repository root.
-        var coverageDir = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "..", "..", "coverage");
+        
+        // Use the project root as the reference point for the coverage directory.
+        // The test runs from: dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.Tests/bin/Release/net10.0/
+        // We need to go up 6 levels to reach the root.
+        var coverageDir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "..", "..", "coverage"));
         
         // Ensure we are looking at the correct absolute path if possible, 
         // but for the purpose of this test in CI, we assert its existence.
@@ -29,7 +33,9 @@ public class MigrationSetupTests
     {
         // GOM-4-AC1: CI pipeline runs every existing test on each pull request
         // Verify that JUnit test results are generated in the coverage directory
-        var coverageDir = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "..", "..", "coverage");
+        // The test runs from: dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.Tests/bin/Release/net10.0/
+        // We need to go up 6 levels to reach the root.
+        var coverageDir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "..", "..", "coverage"));
         
         Assert.True(Directory.Exists(coverageDir), $"Coverage directory not found at: {coverageDir}");
         
@@ -56,9 +62,25 @@ public class MigrationSetupTests
     public void GOM_6_AC1_Containerization_Test()
     {
         // GOM-6-AC1: Containerized local dev environment for the legacy codebase
-        var isContainer = Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") == "true" ||
-                          File.Exists("/.dockerenv");
+        // Decision D-072: Static verification of Docker infrastructure instead of runtime detection.
         
-        Assert.True(isContainer, "Environment should be detected as a container.");
+        // Use the project root as the reference point for the Docker files.
+        // The test runs from: dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.Tests/bin/Release/net10.0/
+        // We need to go up 6 levels to reach the root.
+        string rootDir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "..", ".."));
+        
+        // 1. Verify Dockerfile existence and content
+        string dockerfilePath = Path.Combine(rootDir, "Dockerfile");
+        Assert.True(File.Exists(dockerfilePath), $"Dockerfile should exist at: {dockerfilePath}");
+        string dockerfileContent = File.ReadAllText(dockerfilePath);
+        Assert.Contains("FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019", dockerfileContent);
+        Assert.Contains("COPY dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/ .", dockerfileContent);
+
+        // 2. Verify docker-compose.yml existence and content
+        string composePath = Path.Combine(rootDir, "docker-compose.yml");
+        Assert.True(File.Exists(composePath), $"docker-compose.yml should exist at: {composePath}");
+        string composeContent = File.ReadAllText(composePath);
+        Assert.Contains("gadgetsonline-legacy:", composeContent);
+        Assert.Contains("gadgetsonline-dev:", composeContent);
     }
 }
