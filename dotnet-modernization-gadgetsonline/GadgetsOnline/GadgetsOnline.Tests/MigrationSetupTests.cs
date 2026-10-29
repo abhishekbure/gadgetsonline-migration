@@ -27,14 +27,26 @@ public class MigrationSetupTests : IDisposable
 
     public void Dispose()
     {
+        try
+        {
+            // Cleanup logic if required in future
+        }
+        catch (System.Exception ex)
+        {
+            // Log exception or handle gracefully to avoid swallowing critical cleanup failures
+            Trace.WriteLine($"Cleanup failed: {ex.Message}");
+        }
     }
 
     [Fact]
     public void GOM_3_AC1_CoverageBaseline_Test()
     {
         // GOM-3-AC1: Coverage report generated for the entire legacy codebase
-        // Verify that at least one Cobertura coverage file exists in the coverage directory
+        // Verify that the coverage directory exists (as per Fix Direction 3)
         
+        Assert.True(Directory.Exists(_coverageDir), $"Coverage directory missing: {_coverageDir}");
+        
+        // Verify that at least one Cobertura coverage file exists in the coverage directory
         var coverageFiles = Directory.GetFiles(_coverageDir, "coverage.cobertura.xml", SearchOption.AllDirectories);
         Assert.NotEmpty(coverageFiles);
     }
