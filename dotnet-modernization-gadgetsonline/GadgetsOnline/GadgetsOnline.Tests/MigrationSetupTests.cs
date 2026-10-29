@@ -1,11 +1,11 @@
-using Xunit;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using GadgetsOnline.Services;
-
+/// <summary>
+/// Tests for validating the migration setup infrastructure, including coverage, CI, performance, and containerization.
+/// </summary>
 namespace GadgetsOnline.Tests;
 
+/// <summary>
+/// Implements validation tests for the GMM-EP-001 migration setup requirements.
+/// </summary>
 public class MigrationSetupTests : IDisposable
 {
     private readonly string _rootDir;
@@ -25,7 +25,7 @@ public class MigrationSetupTests : IDisposable
     }
 
     [Fact]
-    public void GOM_3_AC1_CoverageBaseline_Test()
+    public void Should_GenerateCoverageReport_When_CoverageBaselineTestRuns()
     {
         // GOM-3-AC1: Coverage report generated for the entire legacy codebase
         // Create a temporary coverage directory for this test run to avoid dependency on external state
@@ -44,7 +44,7 @@ public class MigrationSetupTests : IDisposable
     }
 
     [Fact]
-    public void GOM_4_AC1_CIPipeline_Test()
+    public void Should_CreateJunitResults_When_CIPipelineTestRuns()
     {
         // GOM-4-AC1: CI pipeline runs every existing test on each pull request
         // Create a temporary junit directory for this test run
@@ -63,7 +63,7 @@ public class MigrationSetupTests : IDisposable
     }
 
     [Fact]
-    public void GOM_5_AC1_PerformanceBaseline_Test()
+    public void Should_CapturePerformanceMetrics_When_PerformanceBaselineTestRuns()
     {
         // GOM-5-AC1: Baseline performance benchmarks captured
         // Simulate a workload: repeated string operations
@@ -78,7 +78,7 @@ public class MigrationSetupTests : IDisposable
     }
 
     [Fact]
-    public void GOM_6_AC1_Containerization_Test()
+    public void Should_VerifyDockerInfrastructure_When_ContainerizationTestRuns()
     {
         // GOM-6-AC1: Containerized local dev environment for the legacy codebase
         // Decision D-072: Static verification of Docker infrastructure instead of runtime detection.
