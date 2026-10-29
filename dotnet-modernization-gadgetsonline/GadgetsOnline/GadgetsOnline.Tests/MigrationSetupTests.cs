@@ -13,15 +13,13 @@ public class MigrationSetupTests
     {
         // GOM-3-AC1: Coverage report generated for the entire legacy codebase
         // Verify that at least one Cobertura coverage file exists in a coverage directory
-        var coverageDir = Path.Combine(Directory.GetCurrentDirectory(), "coverage");
-        if (!Directory.Exists(coverageDir))
-        {
-            // In a real CI environment, this directory would be populated by the test runner.
-            // For local development/pre-flight, we allow the directory to be missing if we aren't running in a coverage-collecting mode,
-            // but the requirement is that the CI pipeline generates it.
-            // We'll check for the existence of the directory or the files.
-            return; 
-        }
+        // The requirement states the directory is at the repository root.
+        var coverageDir = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "..", "..", "coverage");
+        
+        // Ensure we are looking at the correct absolute path if possible, 
+        // but for the purpose of this test in CI, we assert its existence.
+        Assert.True(Directory.Exists(coverageDir), $"Coverage directory not found at: {coverageDir}");
+        
         var coverageFiles = Directory.GetFiles(coverageDir, "coverage.cobertura.xml", SearchOption.AllDirectories);
         Assert.NotEmpty(coverageFiles);
     }
@@ -31,11 +29,10 @@ public class MigrationSetupTests
     {
         // GOM-4-AC1: CI pipeline runs every existing test on each pull request
         // Verify that JUnit test results are generated in the coverage directory
-        var coverageDir = Path.Combine(Directory.GetCurrentDirectory(), "coverage");
-        if (!Directory.Exists(coverageDir))
-        {
-            return;
-        }
+        var coverageDir = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "..", "..", "coverage");
+        
+        Assert.True(Directory.Exists(coverageDir), $"Coverage directory not found at: {coverageDir}");
+        
         var junitFiles = Directory.GetFiles(coverageDir, "junit-results.xml", SearchOption.AllDirectories);
         Assert.NotEmpty(junitFiles);
     }
@@ -62,13 +59,6 @@ public class MigrationSetupTests
         var isContainer = Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") == "true" ||
                           File.Exists("/.dockerenv");
         
-        if (isContainer)
-        {
-            Assert.True(isContainer, "Environment should be detected as a container.");
-        }
-        else
-        {
-            return;
-        }
+        Assert.True(isContainer, "Environment should be detected as a container.");
     }
 }
