@@ -15,7 +15,7 @@ services:
       start_period: 40s
 
   gadgetsonline-dev:
-    image: mcr.microsoft.com/dotnet/sdk:6.0-windowsservercore-ltsc2019
+    image: mcr.microsoft.com/dotnet/sdk:10.0-windowsservercore-ltsc2022
     volumes:
       - .:/app
     working_dir: /app
