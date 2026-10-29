@@ -3,6 +3,9 @@
 /// </summary>
 namespace GadgetsOnline.Tests;
 
+using System.Diagnostics;
+using Xunit;
+
 /// <summary>
 /// Implements validation tests for the GMM-EP-001 migration setup requirements.
 /// </summary>
