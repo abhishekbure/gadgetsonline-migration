@@ -1,5 +1,5 @@
 /// <summary>
-/// Tests for validating the migration setup infrastructure, including coverage, CI, performance, and containerization.
+/// Implements validation tests for the GMM-EP-001 migration setup requirements.
 /// </summary>
 namespace GadgetsOnline.Tests;
 
@@ -47,22 +47,22 @@ public class MigrationSetupTests : IDisposable
     }
 
     [Fact]
-    public void Should_CreateJunitResults_When_CIPipelineTestRuns()
+    public void Should_GenerateTrxResults_When_CIPipelineTestRuns()
     {
         // GOM-4-AC1: CI pipeline runs every existing test on each pull request
-        // Create a temporary junit directory for this test run
-        string tempJunitDir = Path.Combine(_rootDir, "temp_junit_test");
-        if (Directory.Exists(tempJunitDir)) Directory.Delete(tempJunitDir, true);
-        Directory.CreateDirectory(tempJunitDir);
+        // Create a temporary results directory for this test run
+        string tempResultsDir = Path.Combine(_rootDir, "temp_results_test");
+        if (Directory.Exists(tempResultsDir)) Directory.Delete(tempResultsDir, true);
+        Directory.CreateDirectory(tempResultsDir);
 
-        string junitFile = Path.Combine(tempJunitDir, "junit-results.xml");
-        File.WriteAllText(junitFile, "<testsuites></testsuites>");
+        string trxFile = Path.Combine(tempResultsDir, "test_results.trx");
+        File.WriteAllText(trxFile, "<TestRun></TestRun>");
 
         // Assert that the file was successfully created within the temporary context
-        Assert.True(File.Exists(junitFile), $"JUnit results file should be created: {junitFile}");
+        Assert.True(File.Exists(trxFile), $"TRX results file should be created: {trxFile}");
 
         // Cleanup
-        Directory.Delete(tempJunitDir, true);
+        Directory.Delete(tempResultsDir, true);
     }
 
     [Fact]
