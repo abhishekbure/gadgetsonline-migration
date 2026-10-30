@@ -14,7 +14,7 @@ public class MigrationSetupTests : IDisposable
     private readonly string _rootDir;
     private readonly string _coverageDir;
 
-public MigrationSetupTests()
+    public MigrationSetupTests()
     {
         // The test runs from: dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.Tests/bin/Release/net10.0/
         // We need to go up 6 levels to reach the root.
