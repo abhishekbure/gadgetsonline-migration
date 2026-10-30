@@ -91,7 +91,7 @@ public class MigrationSetupTests : IDisposable
         Assert.True(File.Exists(dockerfilePath), $"Dockerfile should exist at: {dockerfilePath}");
         string dockerfileContent = File.ReadAllText(dockerfilePath);
         Assert.Contains("FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019", dockerfileContent);
-        Assert.Contains("COPY dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/", dockerfileContent);
+        Assert.Contains("COPY GadgetsOnline/GadgetsOnline/", dockerfileContent);
 
         // 2. Verify docker-compose.yml existence and content
         string composePath = Path.Combine(_rootDir, "docker-compose.yml");
