@@ -7,9 +7,8 @@ FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
 WORKDIR /inetpub/wwwroot
 
 # Copy the legacy application files to the container
-# Note: In a real scenario, we would build the app first or copy the published output.
-# The files are located in GadgetsOnline/GadgetsOnline/
-COPY GadgetsOnline/GadgetsOnline/ .
+# The files are located in dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/
+COPY dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/ .
 
 # Expose port 80 for web access
 EXPOSE 80
