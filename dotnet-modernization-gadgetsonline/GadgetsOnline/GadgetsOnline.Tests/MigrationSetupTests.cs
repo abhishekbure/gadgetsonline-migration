@@ -33,7 +33,7 @@ public MigrationSetupTests()
         // Cleanup logic if required in future
     }
 
-    [Fact]
+[Fact]
     public void Should_GenerateCoverageReport_When_CoverageBaselineTestRuns()
     {
         // GOM-3-AC1: Coverage report generated for the entire legacy codebase

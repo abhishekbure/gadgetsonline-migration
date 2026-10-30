@@ -1,0 +1,128 @@
+
+Welcome to .NET 10.0!
+---------------------
+SDK Version: 10.0.402
+
+Telemetry
+---------
+The .NET tools collect usage data in order to help us improve your experience. It is collected by Microsoft and shared with the community. You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
+
+Read more about .NET CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
+
+----------------
+Installed an ASP.NET Core HTTPS development certificate.
+To trust the certificate, run 'dotnet dev-certs https --trust'
+Learn about HTTPS: https://aka.ms/dotnet-https
+
+----------------
+Write your first app: https://aka.ms/dotnet-hello-world
+Find out what's new: https://aka.ms/dotnet-whats-new
+Explore documentation: https://aka.ms/dotnet-docs
+Report issues and find source on GitHub: https://github.com/dotnet/core
+Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli
+--------------------------------------------------------------------------------------
+An issue was encountered verifying workloads. For more information, run "dotnet workload update".
+Build started 10/30/2026 10:33:21.
+     1>Project "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln" on node 1 (Restore target(s)).
+     1>ValidateSolutionConfiguration:
+         Building solution configuration "Release|Any CPU".
+       _GetAllRestoreProjectPathItems:
+         Determining projects to restore...
+     1>Project "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln" (1) is building "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/GadgetsOnline.csproj" (2:5) on node 1 (_GenerateProjectRestoreGraph target(s)).
+     2>AddPrunePackageReferences:
+         Loading prune package data from PrunePackageData folder
+         Failed to load prune package data from PrunePackageData folder, loading from targeting packs instead
+         Looking for targeting packs in /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/packs/Microsoft.NETCore.App.Ref
+         Pack directories found: /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/packs/Microsoft.NETCore.App.Ref/10.0.13
+         Found package overrides file /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/packs/Microsoft.NETCore.App.Ref/10.0.13/data/PackageOverrides.txt
+         Loading prune package data from PrunePackageData folder
+         Failed to load prune package data from PrunePackageData folder, loading from targeting packs instead
+         Looking for targeting packs in /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/packs/Microsoft.AspNetCore.App.Ref
+         Pack directories found: /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/packs/Microsoft.AspNetCore.App.Ref/10.0.13
+         Found package overrides file /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/packs/Microsoft.AspNetCore.App.Ref/10.0.13/data/PackageOverrides.txt
+     2>Done Building Project "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/GadgetsOnline.csproj" (_GenerateProjectRestoreGraph target(s)).
+     1>Restore:
+         X.509 certificate chain validation will use the fallback certificate bundle at '/home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/sdk/10.0.402/trustedroots/codesignctl.pem'.
+         X.509 certificate chain validation will use the fallback certificate bundle at '/home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/sdk/10.0.402/trustedroots/timestampctl.pem'.
+         Restoring packages for /opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/GadgetsOnline.csproj...
+         Installed System.Security.Permissions 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.security.permissions/6.0.0 with content hash T/uuc7AklkDoxmcJ7LGkyX1CcSviZuLCa4jg3PekfJ7SU0niF0IVTXwUiNVP9DSpzou2PpxJ+eNY2IfDM90ZCg==.
+         Installed System.Composition.Hosting 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.composition.hosting/6.0.0 with content hash w/wXjj7kvxuHPLdzZ0PAUt++qJl03t7lENmb2Oev0n3zbxyNULbWBlnd5J5WUMMv15kg5o+/TCZFb6lSwfaUUQ==.
+         Installed Microsoft.Data.SqlClient.SNI.runtime 5.1.1 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.1.1 with content hash wNGM5ZTQCa2blc9ikXQouybGiyMd6IHPVJvAlBEPtr6JepZEOYeDxGyprYvFVeOxlCXs7avridZQ0nYkHzQWCQ==.
+         Installed Mono.TextTemplating 2.2.1 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/mono.texttemplating/2.2.1 with content hash KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==.
+         Installed System.Composition 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.composition/6.0.0 with content hash d7wMuKQtfsxUa7S13tITC8n1cQzewuhD5iDjZtK2prwFfKVzdYtgrTHgjaV03Zq7feGQ5gkP85tJJntXwInsJA==.
+         Installed System.Security.Cryptography.ProtectedData 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.security.cryptography.protecteddata/6.0.0 with content hash rp1gMNEZpvx9vP0JW0oHLxlf8oSiQgtno77Y4PLUBjSiDYoD77Y8uXHr1Ea5XG4/pIKhqAdxZ8v8OTUtqo9PeQ==.
+         Installed Microsoft.EntityFrameworkCore.Analyzers 8.0.10 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.10 with content hash 51KkPIc0EMv/gVXhPIUi6cwJE9Mvh+PLr4Lap4naLcsoGZ0lF2SvOPgUUprwRV3MnN7nyD1XPhT5RJ/p+xFAXw==.
+         Installed System.Configuration.ConfigurationManager 6.0.1 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.configuration.configurationmanager/6.0.1 with content hash jXw9MlUu/kRfEU0WyTptAVueupqIeE3/rl0EZDMlf8pcvJnitQ8HeVEp69rZdaStXwTV72boi/Bhw8lOeO+U2w==.
+         Installed System.Composition.TypedParts 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.composition.typedparts/6.0.0 with content hash iUR1eHrL8Cwd82neQCJ00MpwNIBs4NZgXzrPqx8NJf/k4+mwBO0XCRmHYJT4OLSwDDqh5nBLJWkz5cROnrGhRA==.
+         Installed Azure.Identity 1.10.3 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/azure.identity/1.10.3 with content hash l1Xm2MWOF2Mzcwuarlw8kWQXLZk3UeB55aQXVyjj23aBfDwOZ3gu5GP2kJ6KlmZeZv2TCzw7x4L3V36iNr3gww==.
+         Installed System.IdentityModel.Tokens.Jwt 6.35.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.identitymodel.tokens.jwt/6.35.0 with content hash yxGIQd3BFK7F6S62/7RdZk3C/mfwyVxvh6ngd1VYMBmbJ1YZZA9+Ku6suylVtso0FjI0wbElpJ0d27CdsyLpBQ==.
+         Installed Microsoft.IdentityModel.Protocols.OpenIdConnect 6.35.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/6.35.0 with content hash LMtVqnECCCdSmyFoCOxIE5tXQqkOLrvGrL7OxHg41DIm1bpWtaCdGyVcTAfOQpJXvzND9zUKIN/lhngPkYR8vg==.
+         Installed Microsoft.EntityFrameworkCore.Tools 8.0.10 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.entityframeworkcore.tools/8.0.10 with content hash aaimNUjkJDHdZb2hxd6hjwz7OdeankbQHPx8/b+qCfVfaEpOAIW0LTBge4qG+AUKacKfcoK7GJq6ACjenEvPLQ==.
+         Installed Microsoft.IdentityModel.Abstractions 6.35.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.identitymodel.abstractions/6.35.0 with content hash xuR8E4Rd96M41CnUSCiOJ2DBh+z+zQSmyrYHdYhD6K4fXBcQGVnRCFQ0efROUYpP+p0zC1BLKr0JRpVuujTZSg==.
+         Installed Newtonsoft.Json 13.0.3 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/newtonsoft.json/13.0.3 with content hash HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==.
+         Installed Microsoft.EntityFrameworkCore.Abstractions 8.0.10 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.10 with content hash FV0QlcX9INY4kAD2o72uPtyOh0nZut2jB11Jf9mNYBtHay8gDLe+x4AbXFwuQg+eSvofjT7naV82e827zGfyMg==.
+         Installed System.Composition.Runtime 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.composition.runtime/6.0.0 with content hash qkRH/YBaMPTnzxrS5RDk1juvqed4A6HOD/CwRcDGyPpYps1J27waBddiiq1y93jk2ZZ9wuA/kynM+NO0kb3PKg==.
+         Installed Microsoft.CodeAnalysis.Workspaces.Common 4.5.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.codeanalysis.workspaces.common/4.5.0 with content hash l4dDRmGELXG72XZaonnOeORyD/T5RpEu5LGHOUIhnv+MmUWDY/m1kWXGwtcgQ5CJ5ynkFiRnIYzTKXYjUs7rbw==.
+         Installed System.Windows.Extensions 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.windows.extensions/6.0.0 with content hash IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==.
+         Installed System.Configuration.ConfigurationManager 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.configuration.configurationmanager/6.0.0 with content hash 7T+m0kDSlIPTHIkPMIu6m6tV6qsMqJpvQWW2jIc2qi7sn40qxFo0q+7mEQAhMPXZHMKnWrnv47ntGlM/ejvw3g==.
+         Installed Microsoft.Bcl.AsyncInterfaces 1.1.1 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1 with content hash yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==.
+         Installed System.Drawing.Common 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.drawing.common/6.0.0 with content hash NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==.
+         Installed Microsoft.IdentityModel.Logging 6.35.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.identitymodel.logging/6.35.0 with content hash jePrSfGAmqT81JDCNSY+fxVWoGuJKt9e6eJ+vT7+quVS55nWl//jGjUQn4eFtVKt4rt5dXaleZdHRB9J9AJZ7Q==.
+         Installed System.Memory.Data 1.0.2 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.memory.data/1.0.2 with content hash JGkzeqgBsiZwKJZ1IxPNsDFZDhUvuEdX8L8BDC8N3KOj+6zMcNU28CNN59TpZE/VJYy9cP+5M+sbxtWJx3/xtw==.
+         Installed Microsoft.CodeAnalysis.CSharp.Workspaces 4.5.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.codeanalysis.csharp.workspaces/4.5.0 with content hash h74wTpmGOp4yS4hj+EvNzEiPgg/KVs2wmSfTZ81upJZOtPkJsVkgfsgtxxqmAeapjT/vLKfmYV0bS8n5MNVP+g==.
+         Installed Microsoft.Win32.SystemEvents 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.win32.systemevents/6.0.0 with content hash hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==.
+         Installed Microsoft.IdentityModel.Abstractions 6.22.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.identitymodel.abstractions/6.22.0 with content hash iI+9V+2ciCrbheeLjpmjcqCnhy+r6yCoEcid3nkoFWerHgjVuT6CPM4HODUTtUPe1uwks4wcnAujJ8u+IKogHQ==.
+         Installed Microsoft.EntityFrameworkCore.SqlServer 8.0.10 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.entityframeworkcore.sqlserver/8.0.10 with content hash DvhBEk44UjWMebFKwIFDIdEsG8gzbgflWIZljDCpIkZVpId+PKs0ufzJxnTQ94InPO+pS7+wE45cRsPRt9B0Iw==.
+         Installed Microsoft.CodeAnalysis.Analyzers 3.3.3 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.3 with content hash j/rOZtLMVJjrfLRlAMckJLPW/1rze9MT1yfWqSIbUPGRu1m1P0fuo9PmqapwsmePfGB5PJrudQLvmUOAMF0DqQ==.
+         Installed Microsoft.CodeAnalysis.Common 4.5.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.codeanalysis.common/4.5.0 with content hash lwAbIZNdnY0SUNoDmZHkVUwLO8UyNnyyh1t/4XsbFxi4Ounb3xszIYZaWhyj5ZjyfcwqwmtMbE7fUTVCqQEIdQ==.
+         Installed Microsoft.Extensions.DependencyModel 8.0.2 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.extensions.dependencymodel/8.0.2 with content hash mUBDZZRgZrSyFOsJ2qJJ9fXfqd/kXJwf3AiDoqLD9m6TjY5OO/vLNOb9fb4juC0487eq4hcGN/M2Rh/CKS7QYw==.
+         Installed Microsoft.IdentityModel.Protocols 6.35.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.identitymodel.protocols/6.35.0 with content hash BPQhlDzdFvv1PzaUxNSk+VEPwezlDEVADIKmyxubw7IiELK18uJ06RQ9QKKkds30XI+gDu9n8j24XQ8w7fjWcg==.
+         Installed Microsoft.EntityFrameworkCore 8.0.10 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.entityframeworkcore/8.0.10 with content hash PPkQdIqfR1nU3n6YgGGDk8G+eaYbaAKM1AzIQtlPNTKf10Osg3N9T+iK9AlnSA/ujsK00flPpFHVfJrbuBFS1A==.
+         Installed System.Composition.Convention 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.composition.convention/6.0.0 with content hash XYi4lPRdu5bM4JVJ3/UIHAiG6V6lWWUlkhB9ab4IOq0FrRsp0F4wTyV4Dj+Ds+efoXJ3qbLqlvaUozDO7OLeXA==.
+         Installed System.IO.FileSystem.AccessControl 5.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.io.filesystem.accesscontrol/5.0.0 with content hash SxHB3nuNrpptVk+vZ/F+7OHEpoHUIKKMl02bUmYHQr1r+glbZQxs7pRtsf4ENO29TVm2TH3AEeep2fJcy92oYw==.
+         Installed Microsoft.EntityFrameworkCore.Design 8.0.10 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.entityframeworkcore.design/8.0.10 with content hash uGNjfKvAsql2KHRqxlK5wHo8mMC60G/FecrFKEjJgeIxtUAbSXGOgKGw/gD9flO5Fzzt1C7uxfIcr6ZsMmFkeg==.
+         Installed Microsoft.IdentityModel.JsonWebTokens 6.35.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.35.0 with content hash 9wxai3hKgZUb4/NjdRKfQd0QJvtXKDlvmGMYACbEC8DFaicMFCFhQFZq9ZET1kJLwZahf2lfY5Gtcpsx8zYzbg==.
+         Installed System.Security.Cryptography.ProtectedData 4.7.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.security.cryptography.protecteddata/4.7.0 with content hash ehYW0m9ptxpGWvE4zgqongBVWpSDU/JCFD4K7krxkQwSz/sFQjEXCUqpvencjy6DYDbn7Ig09R8GFffu8TtneQ==.
+         Installed System.Security.Cryptography.ProtectedData 4.5.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.security.cryptography.protecteddata/4.5.0 with content hash wLBKzFnDCxP12VL9ANydSYhk59fC4cvOr9ypYQLPnAj48NQIhqnjdD2yhP8yEKyBJEjERWS9DisKL7rX5eU25Q==.
+         Installed Microsoft.Identity.Client.Extensions.Msal 4.56.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.identity.client.extensions.msal/4.56.0 with content hash H12YAzEGK55vZ+QpxUzozhW8ZZtgPDuWvgA0JbdIR9UhMUplj29JhIgE2imuH8W2Nw9D8JKygR1uxRFtpSNcrg==.
+         Installed Microsoft.EntityFrameworkCore.Relational 8.0.10 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.entityframeworkcore.relational/8.0.10 with content hash OefBEE47kGKPRPV3OT+FAW6o5BFgLk2D9EoeWVy7NbOepzUneayLQxbVE098FfedTyMwxvZQoDD9LrvZc3MadA==.
+         Installed Azure.Core 1.35.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/azure.core/1.35.0 with content hash hENcx03Jyuqv05F4RBEPbxz29UrM3Nbhnr6Wl6NQpoU9BCIbL3XLentrxDCTrH54NLS11Exxi/o8MYgT/cnKFA==.
+         Installed Humanizer.Core 2.14.1 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/humanizer.core/2.14.1 with content hash lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==.
+         Installed System.CodeDom 4.4.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.codedom/4.4.0 with content hash 2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==.
+         Installed Microsoft.SqlServer.Server 1.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.sqlserver.server/1.0.0 with content hash N4KeF3cpcm1PUHym1RmakkzfkEv3GRMyofVv40uXsQhCQeglr2OHNcUk2WOG51AKpGO8ynGpo9M/kFXSzghwug==.
+         Installed System.Runtime.Caching 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.runtime.caching/6.0.0 with content hash E0e03kUp5X2k+UAoVl6efmI7uU7JRBWi5EIdlQ7cr0NpBGjHG4fWII35PgsBY9T4fJQ8E4QPsL0rKksU9gcL5A==.
+         Installed Microsoft.Bcl.AsyncInterfaces 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0 with content hash UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==.
+         Installed System.Composition.AttributedModel 6.0.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/system.composition.attributedmodel/6.0.0 with content hash WK1nSDLByK/4VoC7fkNiFuTVEiperuCN/Hyn+VN30R+W2ijO1d0Z2Qm0ScEl9xkSn1G2MyapJi8xpf4R8WRa/w==.
+         Installed Microsoft.IdentityModel.Tokens 6.35.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.identitymodel.tokens/6.35.0 with content hash RN7lvp7s3Boucg1NaNAbqDbxtlLj5Qeb+4uSS1TeK5FSBVM40P4DKaTKChT43sHyKfh7V0zkrMph6DdHvyA4bg==.
+         Installed Microsoft.Data.SqlClient 5.1.5 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.data.sqlclient/5.1.5 with content hash 6kvhQjY5uBCdBccezFD2smfnpQjQ33cZtUZVrNvxlwoBu6uopM5INH6uSgLI7JRLtlQ3bMPwnhMq4kchsXeZ5w==.
+         Installed Microsoft.CodeAnalysis.CSharp 4.5.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.codeanalysis.csharp/4.5.0 with content hash cM59oMKAOxvdv76bdmaKPy5hfj+oR+zxikWoueEB7CwTko7mt9sVKZI8Qxlov0C/LuKEG+WQwifepqL3vuTiBQ==.
+         Installed Microsoft.Identity.Client 4.56.0 from /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs to /tmp/.nuget/packages/microsoft.identity.client/4.56.0 with content hash rr4zbidvHy9r4NvOAs5hdd964Ao2A0pAeFBJKR95u1CJAVzbd1p6tPTXUZ+5ld0cfThiVSGvz6UHwY6JjraTpA==.
+     1>/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/GadgetsOnline.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json. [/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln]
+         Assets file has not changed. Skipping assets file writing. Path: /opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/obj/project.assets.json
+         Restored /opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/GadgetsOnline.csproj (in 7.48 sec).
+         
+         NuGet Config files used:
+             /tmp/.nuget/NuGet/NuGet.Config
+         
+         Feeds used:
+             https://api.nuget.org/v3/index.json
+             /home/ubuntu/.gmmcode-toolchains/dotnet-sdk-10-10.0.402/library-packs
+         
+         Installed:
+             52 package(s) to /opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/GadgetsOnline.csproj
+     1>Done Building Project "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln" (Restore target(s)).
+   1:2>Project "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln" on node 1 (VSTest target(s)).
+     1>ValidateSolutionConfiguration:
+         Building solution configuration "Release|Any CPU".
+     1>Done Building Project "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln" (VSTest target(s)).
+
+Build succeeded.
+
+       "/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln" (Restore target) (1) ->
+       (Restore target) -> 
+         /opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline/GadgetsOnline.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json. [/opt/axonbos/apps/gmmcode-v11-api/workspace/bphl-4fcb44/bphl-b533b9/SR-000076/dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln]
+
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:08.95
