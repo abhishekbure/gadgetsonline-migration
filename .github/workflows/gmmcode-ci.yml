@@ -26,11 +26,11 @@ jobs:
         run: dotnet test dotnet-modernization-gadgetsonline/GadgetsOnline/GadgetsOnline.sln --configuration Release --no-build --logger trx --collect:"XPlat Code Coverage" --results-directory coverage
 
       - name: Install ReportGenerator
-        run: dotnet tool install --global reportgenerator
+        run: dotnet tool install --global dotnet-reportgenerator-globaltool
 
       - name: Generate Coverage Report
         shell: pwsh
-        run: ./scripts/coverage/generate_coverage_report.ps1
+        run: reportgenerator -reports:coverage/**/coverage.cobertura.xml -targetdir:coverage/html-report -reporttypes:Html
 
       - name: Upload Coverage XML
         uses: actions/upload-artifact@v4
