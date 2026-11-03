@@ -29,19 +29,16 @@ jobs:
         run: dotnet tool install --global dotnet-reportgenerator-globaltool
 
       - name: Generate Coverage Report
-        continue-on-error: true
         shell: pwsh
         run: reportgenerator -reports:coverage/**/coverage.cobertura.xml -targetdir:coverage/html-report -reporttypes:Html
 
       - name: Upload Coverage XML
-        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: coverage-xml
           path: coverage/**/coverage.cobertura.xml
 
       - name: Upload Coverage HTML Report
-        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: coverage-html
