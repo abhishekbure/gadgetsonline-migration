@@ -1,0 +1,97 @@
+{
+  "work_ref": "SR-000076",
+  "contracts": [
+    {
+      "id": "ci-status-openapi",
+      "kind": "openapi",
+      "path": "contracts/openapi/ci-status.yaml"
+    },
+    {
+      "id": "coverage-report-plan",
+      "kind": "schema_plan",
+      "path": "contracts/schema/coverage-report-plan.md"
+    },
+    {
+      "id": "perf-metrics-plan",
+      "kind": "schema_plan",
+      "path": "contracts/schema/perf-metrics-plan.md"
+    }
+  ],
+  "items": [
+    {
+      "id": "GOM-3-COVERAGE",
+      "role": "developer",
+      "title": "Generate Coverage Report",
+      "paths": [
+        ".legacy-source/**/*.cs"
+      ],
+      "contracts": [
+        "coverage-report-plan"
+      ],
+      "depends_on": [],
+      "integrates_after": [],
+      "ac": [
+        "AC-001"
+      ]
+    },
+    {
+      "id": "GOM-4-CI",
+      "role": "developer",
+      "title": "CI Pipeline Integration",
+      "paths": [
+        ".github/workflows/gmmcode-ci.yml"
+      ],
+      "contracts": [
+        "ci-status-openapi"
+      ],
+      "depends_on": [
+        "GOM-3-COVERAGE"
+      ],
+      "integrates_after": [],
+      "ac": [
+        "AC-002"
+      ]
+    },
+    {
+      "id": "GOM-5-PERF",
+      "role": "developer",
+      "title": "Baseline Performance Benchmarks",
+      "paths": [
+        "scripts/benchmark.ps1"
+      ],
+      "contracts": [
+        "perf-metrics-plan"
+      ],
+      "depends_on": [
+        "GOM-4-CI"
+      ],
+      "integrates_after": [],
+      "ac": [
+        "AC-003"
+      ]
+    },
+    {
+      "id": "GOM-6-CONTAINER",
+      "role": "developer",
+      "title": "Containerized Dev Environment",
+      "paths": [
+        "Dockerfile",
+        "docker-compose.yml"
+      ],
+      "contracts": [],
+      "depends_on": [],
+      "integrates_after": [],
+      "ac": [
+        "AC-004"
+      ]
+    }
+  ],
+  "critical_modules": [
+    "CI Pipeline",
+    "Docker Environment"
+  ],
+  "nfr": {
+    "reliability": "CI pipeline must complete within 15 minutes",
+    "maintainability": "Container environment must be reproducible via docker-compose up"
+  }
+}

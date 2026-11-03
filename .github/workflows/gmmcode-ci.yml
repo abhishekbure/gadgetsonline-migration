@@ -1,0 +1,45 @@
+name: GMMCODE CI
+
+on:
+  pull_request:
+    branches: [ main, 'task/**' ]
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore GadgetsOnline.sln
+
+      - name: Build solution
+        run: dotnet build GadgetsOnline.sln --configuration Release --no-restore
+
+      - name: Run tests with coverage
+        run: dotnet test GadgetsOnline.sln --configuration Release --no-build --logger trx --collect:"XPlat Code Coverage" --results-directory coverage
+
+      - name: Install ReportGenerator
+        run: dotnet tool install --global dotnet-reportgenerator-globaltool
+
+      - name: Generate Coverage Report
+        shell: pwsh
+        run: reportgenerator -reports:coverage/**/coverage.cobertura.xml -targetdir:coverage/html-report -reporttypes:Html
+
+      - name: Upload Coverage XML
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage/**/coverage.cobertura.xml
+
+      - name: Upload Coverage HTML Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-html
+          path: coverage/html-report

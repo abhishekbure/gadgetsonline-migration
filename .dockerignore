@@ -1,0 +1,10 @@
+.git
+.github
+.gmmcode
+.legacy-source/GadgetsOnline/GadgetsOnline/bin
+.legacy-source/GadgetsOnline/GadgetsOnline/obj
+.legacy-source/GadgetsOnline/GadgetsOnline.Tests/bin
+.legacy-source/GadgetsOnline/GadgetsOnline.Tests/obj
+*.user
+*.suo
+*.log
