@@ -1,0 +1,11 @@
+{
+  "id": "cart-add-post-12",
+  "method": "POST",
+  "observation": {
+    "headers": {
+      "location": "/ShoppingCart"
+    },
+    "status": 302
+  },
+  "path": "/ShoppingCart/AddToCart?id=12"
+}

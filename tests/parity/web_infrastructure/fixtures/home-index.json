@@ -1,0 +1,44 @@
+{
+  "id": "home-index",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "#footer a": [
+        "AWS ❤️ ASP.NET"
+      ],
+      "#header h1": [
+        "Welcome to Gadgets Online!"
+      ],
+      "#navlist li": [
+        "Home",
+        "ShoppingCart"
+      ],
+      "h3": [
+        "Gadgets Online. Our best selling"
+      ],
+      "title": [
+        "Welcome to Gadgets Online!"
+      ],
+      "ul#album-list li span": [
+        "Phone 12",
+        "Phone 13 Pro",
+        "Phone 13 Pro Max",
+        "XTS 13'",
+        "PC 15.5'",
+        "Notebook 14"
+      ],
+      "ul#categories li": [
+        "Mobile Phones",
+        "Laptops",
+        "Desktops",
+        "Audio",
+        "Accessories"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Home/Index"
+}

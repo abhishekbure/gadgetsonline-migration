@@ -1,0 +1,11 @@
+{
+  "id": "static-logo",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "image/png"
+    },
+    "status": 200
+  },
+  "path": "/Content/Images/logo.png"
+}

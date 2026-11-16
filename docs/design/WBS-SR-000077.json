@@ -1,0 +1,106 @@
+{
+  "work_ref": "SR-000077",
+  "contracts": [
+    {
+      "id": "openapi-web-infrastructure",
+      "kind": "openapi",
+      "path": "contracts/openapi/web-infrastructure.yaml"
+    },
+    {
+      "id": "schema-parity-tests",
+      "kind": "schema_plan",
+      "path": "contracts/schema/parity-tests-plan.md"
+    },
+    {
+      "id": "design-tokens",
+      "kind": "design_tokens",
+      "path": "contracts/ui/tokens.json"
+    }
+  ],
+  "items": [
+    {
+      "id": "GOM-12",
+      "role": "developer",
+      "title": "Write parity test suite for web_infrastructure",
+      "paths": [
+        "tests/GadgetsOnline.Parity.Tests/**",
+        "GadgetsOnline.sln"
+      ],
+      "contracts": [
+        "schema-parity-tests"
+      ],
+      "depends_on": [],
+      "integrates_after": [],
+      "ac": [
+        "AC-001",
+        "AC-002",
+        "AC-003"
+      ]
+    },
+    {
+      "id": "GOM-13",
+      "role": "developer",
+      "title": "Implement web_infrastructure on new stack (parallel run)",
+      "paths": [
+        "src/GadgetsOnline.Web.Infrastructure/**",
+        "src/GadgetsOnline.Web/Controllers/**",
+        "src/GadgetsOnline.Services/**",
+        "src/GadgetsOnline.Models/**",
+        "GadgetsOnline.sln"
+      ],
+      "contracts": [
+        "openapi-web-infrastructure"
+      ],
+      "depends_on": [
+        "GOM-12"
+      ],
+      "integrates_after": [
+        "GOM-12"
+      ],
+      "ac": [
+        "AC-004",
+        "AC-005",
+        "AC-006"
+      ]
+    },
+    {
+      "id": "GOM-TEST",
+      "role": "tester",
+      "title": "Verify parity test suite and new implementation",
+      "paths": [
+        "tests/**"
+      ],
+      "contracts": [
+        "schema-parity-tests"
+      ],
+      "depends_on": [
+        "GOM-12",
+        "GOM-13"
+      ],
+      "integrates_after": [
+        "GOM-13"
+      ],
+      "ac": [
+        "AC-007"
+      ]
+    }
+  ],
+  "critical_modules": [
+    "src/GadgetsOnline.Web.Infrastructure",
+    "tests/GadgetsOnline.Parity.Tests"
+  ],
+  "nfr": {
+    "performance_efficiency": {
+      "tactic": "Benchmark tests compare legacy vs new p99 latency; new must be within 10% of baseline",
+      "target": "p99 < legacy_baseline * 1.10"
+    },
+    "reliability": {
+      "tactic": "Parity tests execute against both implementations with 100 sample inputs covering all endpoints",
+      "target": "100% parity pass rate before merge"
+    },
+    "maintainability": {
+      "tactic": "Clean separation between legacy (.legacy-source/) and new (src/) code; no direct imports",
+      "target": "Zero coupling from new to legacy paths"
+    }
+  }
+}

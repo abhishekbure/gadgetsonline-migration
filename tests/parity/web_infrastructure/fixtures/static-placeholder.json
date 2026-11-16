@@ -1,0 +1,11 @@
+{
+  "id": "static-placeholder",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "image/gif"
+    },
+    "status": 200
+  },
+  "path": "/Content/Images/placeholder.gif"
+}

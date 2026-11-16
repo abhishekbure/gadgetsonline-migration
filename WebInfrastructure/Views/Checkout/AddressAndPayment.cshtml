@@ -1,0 +1,55 @@
+@model Order
+
+@{
+    ViewBag.Title = "Address And Payment";
+}
+
+<form method="post">
+
+    <h2>Address And Payment</h2>
+    <fieldset>
+        <legend>Shipping Information</legend>
+
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <div class="editor-label"><label asp-for="FirstName"></label></div>
+        <div class="editor-field"><input asp-for="FirstName" class="text-box single-line" /><span asp-validation-for="FirstName"></span></div>
+
+        <div class="editor-label"><label asp-for="LastName"></label></div>
+        <div class="editor-field"><input asp-for="LastName" class="text-box single-line" /><span asp-validation-for="LastName"></span></div>
+
+        <div class="editor-label"><label asp-for="Address"></label></div>
+        <div class="editor-field"><input asp-for="Address" class="text-box single-line" /><span asp-validation-for="Address"></span></div>
+
+        <div class="editor-label"><label asp-for="City"></label></div>
+        <div class="editor-field"><input asp-for="City" class="text-box single-line" /><span asp-validation-for="City"></span></div>
+
+        <div class="editor-label"><label asp-for="State"></label></div>
+        <div class="editor-field"><input asp-for="State" class="text-box single-line" /><span asp-validation-for="State"></span></div>
+
+        <div class="editor-label"><label asp-for="PostalCode"></label></div>
+        <div class="editor-field"><input asp-for="PostalCode" class="text-box single-line" /><span asp-validation-for="PostalCode"></span></div>
+
+        <div class="editor-label"><label asp-for="Country"></label></div>
+        <div class="editor-field"><input asp-for="Country" class="text-box single-line" /><span asp-validation-for="Country"></span></div>
+
+        <div class="editor-label"><label asp-for="Phone"></label></div>
+        <div class="editor-field"><input asp-for="Phone" class="text-box single-line" /><span asp-validation-for="Phone"></span></div>
+
+        <div class="editor-label"><label asp-for="Email"></label></div>
+        <div class="editor-field"><input asp-for="Email" class="text-box single-line" /><span asp-validation-for="Email"></span></div>
+    </fieldset>
+    <fieldset>
+        <legend>Payment</legend>
+        <p>We're running a promotion: all music is free with the promo code: "FREE"</p>
+
+        <div class="editor-label">
+            <label for="PromoCode">Promo Code</label>
+        </div>
+        <div class="editor-field">
+            <input id="PromoCode" name="PromoCode" type="text" value="" />
+        </div>
+    </fieldset>
+
+    <input type="submit" value="Submit Order" />
+</form>

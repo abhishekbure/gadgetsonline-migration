@@ -1,0 +1,20 @@
+{
+  "id": "store-browse-desktops-upper",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "title": [
+        "Browse Gadgets"
+      ],
+      "ul#album-list li span": [
+        "The IdeaCenter",
+        "COMP 22-df003w"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Browse?category=DESKTOPS"
+}

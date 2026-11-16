@@ -1,0 +1,20 @@
+{
+  "id": "store-browse-capital-parameter-name",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "title": [
+        "Browse Gadgets"
+      ],
+      "ul#album-list li span": [
+        "Bluetooth Headphones Over Ear",
+        "ZX Series"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Browse?Category=Audio"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "static-laptop-image",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "image/jpeg"
+    },
+    "status": 200
+  },
+  "path": "/Content/Images/Laptop/1.jpg"
+}

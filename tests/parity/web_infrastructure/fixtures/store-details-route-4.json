@@ -1,0 +1,25 @@
+{
+  "id": "store-details-route-4",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "#album-details p": [
+        "Laptops Type:",
+        "Latest Laptops in 2022 Description:",
+        "$ 899.00 Price:",
+        "Add to cart"
+      ],
+      "h2": [
+        "XTS 13'"
+      ],
+      "title": [
+        "Gadget - XTS 13'"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Details/4"
+}

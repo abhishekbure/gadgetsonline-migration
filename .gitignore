@@ -36,3 +36,8 @@ venv/
 
 TestResults/
 *.trx
+TestResults[!a-zA-Z]*/
+*.tsbuildinfo
+/junit*.xml
+dist/
+out/

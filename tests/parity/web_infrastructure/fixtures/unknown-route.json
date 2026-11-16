@@ -1,0 +1,8 @@
+{
+  "id": "unknown-route",
+  "method": "GET",
+  "observation": {
+    "status": 404
+  },
+  "path": "/no/such/page"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "cart-add-duplicate",
+  "method": "POST",
+  "observation": {
+    "status": 302
+  },
+  "path": "/ShoppingCart/AddToCart?id=1"
+}

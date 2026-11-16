@@ -1,0 +1,8 @@
+{
+  "id": "cart-remove-existing",
+  "method": "POST",
+  "observation": {
+    "status": 500
+  },
+  "path": "/ShoppingCart/RemoveFromCart?id=1"
+}

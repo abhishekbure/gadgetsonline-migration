@@ -1,0 +1,698 @@
+# Parity cases for the web_infrastructure module (GOM-12): each case is one request, sent to the legacy
+# application and to the new module, and the compared fields must be equal.
+# Every page case compares the page title and the page's own content (not only the status).
+# na: only where the platform cannot compare, or the legacy answer is a defect that is not reproduced; the reason is true.
+schema_version: "1.0"
+
+cases:
+  - id: "home-index"
+    method: "GET"
+    path: "/Home/Index"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h3", "ul#album-list li span", "ul#categories li", "#header h1", "#navlist li", "#footer a"]
+  - id: "home-root"
+    method: "GET"
+    path: "/"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h3", "ul#album-list li span"]
+  - id: "home-bare-controller"
+    method: "GET"
+    path: "/Home"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h3", "ul#album-list li span"]
+  - id: "home-index-extra-id"
+    method: "GET"
+    path: "/Home/Index/1"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h3", "ul#album-list li span"]
+  - id: "home-index-lowercase-route"
+    method: "GET"
+    path: "/home/index"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h3", "ul#album-list li span"]
+  - id: "home-about"
+    method: "GET"
+    path: "/Home/About"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "h3", "p"]
+  - id: "home-about-uppercase-route"
+    method: "GET"
+    path: "/HOME/ABOUT"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "h3", "p"]
+  - id: "home-contact"
+    method: "GET"
+    path: "/Home/Contact"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "h3", "address"]
+  - id: "store-browse-mobile"
+    method: "GET"
+    path: "/Store/Browse?category=Mobile%20Phones"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-mobile-lower"
+    method: "GET"
+    path: "/Store/Browse?category=mobile%20phones"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-mobile-upper"
+    method: "GET"
+    path: "/Store/Browse?category=MOBILE%20PHONES"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-laptops"
+    method: "GET"
+    path: "/Store/Browse?category=Laptops"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-laptops-lower"
+    method: "GET"
+    path: "/Store/Browse?category=laptops"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-laptops-upper"
+    method: "GET"
+    path: "/Store/Browse?category=LAPTOPS"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-desktops"
+    method: "GET"
+    path: "/Store/Browse?category=Desktops"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-desktops-lower"
+    method: "GET"
+    path: "/Store/Browse?category=desktops"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-desktops-upper"
+    method: "GET"
+    path: "/Store/Browse?category=DESKTOPS"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-audio"
+    method: "GET"
+    path: "/Store/Browse?category=Audio"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-audio-lower"
+    method: "GET"
+    path: "/Store/Browse?category=audio"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-audio-upper"
+    method: "GET"
+    path: "/Store/Browse?category=AUDIO"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-accessories"
+    method: "GET"
+    path: "/Store/Browse?category=Accessories"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-accessories-lower"
+    method: "GET"
+    path: "/Store/Browse?category=accessories"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-accessories-upper"
+    method: "GET"
+    path: "/Store/Browse?category=ACCESSORIES"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-trailing-blank"
+    method: "GET"
+    path: "/Store/Browse?category=Laptops%20"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-plus-encoded-space"
+    method: "GET"
+    path: "/Store/Browse?category=Mobile+Phones"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-capital-parameter-name"
+    method: "GET"
+    path: "/Store/Browse?Category=Audio"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-leading-blank"
+    method: "GET"
+    path: "/Store/Browse?category=%20Laptops"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-unknown-category"
+    method: "GET"
+    path: "/Store/Browse?category=NoSuchCategory"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-empty-category"
+    method: "GET"
+    path: "/Store/Browse?category="
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-browse-no-category"
+    method: "GET"
+    path: "/Store/Browse"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "ul#album-list li span"]
+  - id: "store-details-1"
+    method: "GET"
+    path: "/Store/Details?id=1"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-2"
+    method: "GET"
+    path: "/Store/Details?id=2"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-3"
+    method: "GET"
+    path: "/Store/Details?id=3"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-4"
+    method: "GET"
+    path: "/Store/Details?id=4"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-5"
+    method: "GET"
+    path: "/Store/Details?id=5"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-6"
+    method: "GET"
+    path: "/Store/Details?id=6"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-7"
+    method: "GET"
+    path: "/Store/Details?id=7"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-8"
+    method: "GET"
+    path: "/Store/Details?id=8"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-9"
+    method: "GET"
+    path: "/Store/Details?id=9"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-10"
+    method: "GET"
+    path: "/Store/Details?id=10"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-11"
+    method: "GET"
+    path: "/Store/Details?id=11"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-12"
+    method: "GET"
+    path: "/Store/Details?id=12"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-13"
+    method: "GET"
+    path: "/Store/Details?id=13"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-1"
+    method: "GET"
+    path: "/Store/Details/1"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-2"
+    method: "GET"
+    path: "/Store/Details/2"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-3"
+    method: "GET"
+    path: "/Store/Details/3"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-4"
+    method: "GET"
+    path: "/Store/Details/4"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-5"
+    method: "GET"
+    path: "/Store/Details/5"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-6"
+    method: "GET"
+    path: "/Store/Details/6"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-7"
+    method: "GET"
+    path: "/Store/Details/7"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-8"
+    method: "GET"
+    path: "/Store/Details/8"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-9"
+    method: "GET"
+    path: "/Store/Details/9"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-10"
+    method: "GET"
+    path: "/Store/Details/10"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-11"
+    method: "GET"
+    path: "/Store/Details/11"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-12"
+    method: "GET"
+    path: "/Store/Details/12"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-route-13"
+    method: "GET"
+    path: "/Store/Details/13"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "#album-details p"]
+  - id: "store-details-unknown-99999"
+    method: "GET"
+    path: "/Store/Details?id=99999"
+    na: "legacy answers 500: its details view dereferences a null product; the new module answers 404 as the design (section 6.3) says"
+  - id: "store-details-zero"
+    method: "GET"
+    path: "/Store/Details?id=0"
+    na: "legacy answers 500: its details view dereferences a null product; the new module answers 404 as the design (section 6.3) says"
+  - id: "store-details-negative"
+    method: "GET"
+    path: "/Store/Details?id=-1"
+    na: "legacy answers 500: its details view dereferences a null product; the new module answers 404 as the design (section 6.3) says"
+  - id: "store-index"
+    method: "GET"
+    path: "/Store/Index"
+    na: "legacy has no view for this page and answers 500; the new module shows a store landing page as the design maps it"
+  - id: "store-category-menu"
+    method: "GET"
+    path: "/Store/CategoryMenu"
+    na: "legacy child action refuses direct requests with 500; in the new module the menu is a component with no route (404)"
+  - id: "cart-index-new-session"
+    method: "GET"
+    path: "/ShoppingCart/Index"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h3", "th", "#cart-total", "p.button", "#update-message"]
+  - id: "cart-bare-controller-link"
+    method: "GET"
+    path: "/ShoppingCart"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h3", "th", "#cart-total"]
+  - id: "cart-add-post-1"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=1"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-2"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=2"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-3"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=3"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-4"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=4"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-5"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=5"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-6"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=6"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-7"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=7"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-8"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=8"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-9"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=9"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-10"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=10"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-11"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=11"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-12"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=12"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-post-13"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=13"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-1"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=1"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-2"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=2"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-3"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=3"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-4"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=4"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-5"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=5"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-6"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=6"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-7"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=7"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-8"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=8"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-9"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=9"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-10"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=10"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-11"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=11"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-12"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=12"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-get-13"
+    method: "GET"
+    path: "/ShoppingCart/AddToCart?id=13"
+    expect:
+      status: true
+      headers: ["location"]
+  - id: "cart-add-unknown-product"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart?id=99999"
+    na: "legacy answers 500 (database foreign key error); the new module answers 404 for a product that does not exist"
+  - id: "cart-add-missing-id"
+    method: "POST"
+    path: "/ShoppingCart/AddToCart"
+    na: "legacy answers 500 (missing id parameter); the new module answers 404"
+  - id: "cart-remove-line-not-in-cart"
+    method: "POST"
+    path: "/ShoppingCart/RemoveFromCart?id=1"
+    na: "legacy answers 500 when the cart has no such line; the new module answers 404"
+  - id: "checkout-index"
+    method: "GET"
+    path: "/Checkout/Index"
+    na: "legacy has no view for this page and answers 500; the new module redirects to the address form"
+  - id: "checkout-address-form"
+    method: "GET"
+    path: "/Checkout/AddressAndPayment"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "legend", "label"]
+  - id: "checkout-address-post-empty"
+    method: "POST"
+    path: "/Checkout/AddressAndPayment"
+    na: "the new module requires an anti-forgery token on this form (design section 4.6) and the platform sends no token or cookie, so a POST without it answers 400 where the legacy answers 200 (form shown again); the new behaviour is checked by unit tests: validation messages, the bound fields, the token attribute, order creation"
+  - id: "checkout-complete-missing-id"
+    method: "GET"
+    path: "/Checkout/Complete"
+    na: "legacy answers 500 when the order number is missing; the new module answers 404 because there is no order to confirm"
+  - id: "checkout-complete-non-numeric-id"
+    method: "GET"
+    path: "/Checkout/Complete?id=abc"
+    na: "legacy answers 500 for an order number that is not a number; the new module answers 404"
+  - id: "checkout-complete-empty-id"
+    method: "GET"
+    path: "/Checkout/Complete?id="
+    na: "legacy answers 500 for an empty order number; the new module answers 404"
+  - id: "checkout-complete-1"
+    method: "GET"
+    path: "/Checkout/Complete?id=1"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "p"]
+  - id: "checkout-complete-2"
+    method: "GET"
+    path: "/Checkout/Complete?id=2"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "p"]
+  - id: "checkout-complete-999"
+    method: "GET"
+    path: "/Checkout/Complete?id=999"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "p"]
+  - id: "checkout-complete-0"
+    method: "GET"
+    path: "/Checkout/Complete?id=0"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "p"]
+  - id: "checkout-complete-route-id"
+    method: "GET"
+    path: "/Checkout/Complete/7"
+    expect:
+      status: true
+      headers: ["content-type"]
+      selectors: ["title", "h2", "p"]
+  - id: "unknown-route"
+    method: "GET"
+    path: "/no/such/page"
+    expect:
+      status: true
+  - id: "static-site-css"
+    method: "GET"
+    path: "/Content/Site.css"
+    expect:
+      status: true
+      headers: ["content-type"]
+  - id: "static-favicon"
+    method: "GET"
+    path: "/favicon.ico"
+    expect:
+      status: true
+      headers: ["content-type"]
+  - id: "static-logo"
+    method: "GET"
+    path: "/Content/Images/logo.png"
+    expect:
+      status: true
+      headers: ["content-type"]
+  - id: "static-laptop-image"
+    method: "GET"
+    path: "/Content/Images/Laptop/1.jpg"
+    expect:
+      status: true
+      headers: ["content-type"]
+  - id: "static-placeholder"
+    method: "GET"
+    path: "/Content/Images/placeholder.gif"
+    expect:
+      status: true
+      headers: ["content-type"]

@@ -1,0 +1,6 @@
+{
+  "id": "cart-remove-nonexistent",
+  "method": "POST",
+  "observation": {},
+  "path": "/ShoppingCart/RemoveFromCart?id=99999"
+}

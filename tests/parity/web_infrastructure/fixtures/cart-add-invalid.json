@@ -1,0 +1,6 @@
+{
+  "id": "cart-add-invalid",
+  "method": "POST",
+  "observation": {},
+  "path": "/ShoppingCart/AddToCart?id=99999"
+}

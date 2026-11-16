@@ -1,0 +1,11 @@
+{
+  "id": "static-site-css",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/css"
+    },
+    "status": 200
+  },
+  "path": "/Content/Site.css"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "checkout-address-form",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "h2": [
+        "Address And Payment"
+      ],
+      "label": [
+        "First Name",
+        "Last Name",
+        "Address",
+        "City",
+        "State",
+        "Postal Code",
+        "Country",
+        "Phone",
+        "Email Address",
+        "Promo Code"
+      ],
+      "legend": [
+        "Shipping Information",
+        "Payment"
+      ],
+      "title": [
+        "Address And Payment"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Checkout/AddressAndPayment"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "cart-index-with-items",
+  "method": "GET",
+  "observation": {
+    "status": 200
+  },
+  "path": "/ShoppingCart/Index"
+}

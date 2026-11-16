@@ -1,0 +1,16 @@
+@model List<Category>
+@{
+    ViewBag.Title = "Store";
+}
+
+<h3><em>Browse</em> our gadgets by category:</h3>
+
+<ul id="store-categories">
+    @foreach (var category in Model)
+    {
+        <li>
+            <a asp-controller="Store" asp-action="Browse" asp-route-category="@category.Name">@category.Name</a>
+            <span>@category.Description</span>
+        </li>
+    }
+</ul>

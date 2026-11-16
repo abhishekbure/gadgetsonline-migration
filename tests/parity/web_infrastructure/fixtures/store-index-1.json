@@ -1,0 +1,8 @@
+{
+  "id": "store-index-1",
+  "method": "GET",
+  "observation": {
+    "status": 500
+  },
+  "path": "/Store/Index"
+}

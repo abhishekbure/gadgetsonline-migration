@@ -1,0 +1,25 @@
+{
+  "id": "store-details-route-10",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "#album-details p": [
+        "Audio Type:",
+        "Latest audio devices Description:",
+        "$ 10.00 Price:",
+        "Add to cart"
+      ],
+      "h2": [
+        "ZX Series"
+      ],
+      "title": [
+        "Gadget - ZX Series"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Details/10"
+}
