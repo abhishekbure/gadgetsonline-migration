@@ -1,0 +1,13 @@
+{
+  "id": "checkout-complete-valid",
+  "method": "GET",
+  "observation": {
+    "selectors": {
+      "h1": [
+        "Welcome to Gadgets Online!"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Checkout/Complete?id=1"
+}

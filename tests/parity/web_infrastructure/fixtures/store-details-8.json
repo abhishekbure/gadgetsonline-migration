@@ -1,0 +1,25 @@
+{
+  "id": "store-details-8",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "#album-details p": [
+        "Desktops Type:",
+        "Latest Desktops in 2022 Description:",
+        "$ 389.00 Price:",
+        "Add to cart"
+      ],
+      "h2": [
+        "COMP 22-df003w"
+      ],
+      "title": [
+        "Gadget - COMP 22-df003w"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Details?id=8"
+}

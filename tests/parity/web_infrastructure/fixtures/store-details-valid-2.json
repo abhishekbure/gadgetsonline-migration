@@ -1,0 +1,13 @@
+{
+  "id": "store-details-valid-2",
+  "method": "GET",
+  "observation": {
+    "selectors": {
+      "h1": [
+        "Welcome to Gadgets Online!"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Details?id=5"
+}

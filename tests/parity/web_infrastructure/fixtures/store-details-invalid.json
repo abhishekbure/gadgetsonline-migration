@@ -1,0 +1,6 @@
+{
+  "id": "store-details-invalid",
+  "method": "GET",
+  "observation": {},
+  "path": "/Store/Details?id=99999"
+}

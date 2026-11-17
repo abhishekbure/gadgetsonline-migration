@@ -1,0 +1,13 @@
+{
+  "id": "home-about-1",
+  "method": "GET",
+  "observation": {
+    "selectors": {
+      "h1": [
+        "Welcome to Gadgets Online!"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Home/About"
+}

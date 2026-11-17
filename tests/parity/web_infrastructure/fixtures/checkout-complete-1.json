@@ -1,0 +1,24 @@
+{
+  "id": "checkout-complete-1",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "h2": [
+        "Checkout Complete"
+      ],
+      "p": [
+        "Thanks for your order! Your order number is: 000-176-54- 1",
+        "You know this is a demo application, right? Nothing is gonna get shipped. Try the for real shopping ! everything store",
+        "Go back to ! home page"
+      ],
+      "title": [
+        "Checkout Complete"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Checkout/Complete?id=1"
+}

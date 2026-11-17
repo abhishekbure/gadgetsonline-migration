@@ -1,0 +1,13 @@
+{
+  "id": "store-browse-empty",
+  "method": "GET",
+  "observation": {
+    "selectors": {
+      "h1": [
+        "Welcome to Gadgets Online!"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Browse?category="
+}

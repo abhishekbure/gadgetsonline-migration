@@ -1,0 +1,17 @@
+{
+  "id": "store-browse-no-category",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "title": [
+        "Browse Gadgets"
+      ],
+      "ul#album-list li span": []
+    },
+    "status": 200
+  },
+  "path": "/Store/Browse"
+}

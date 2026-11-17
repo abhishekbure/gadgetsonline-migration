@@ -1,0 +1,8 @@
+{
+  "id": "store-browse-headphones",
+  "method": "GET",
+  "observation": {
+    "status": 200
+  },
+  "path": "/Store/Browse?category=Headphones"
+}

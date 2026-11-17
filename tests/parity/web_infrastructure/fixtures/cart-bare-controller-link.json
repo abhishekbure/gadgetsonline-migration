@@ -1,0 +1,28 @@
+{
+  "id": "cart-bare-controller-link",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "#cart-total": [
+        "0"
+      ],
+      "h3": [
+        "your cart: Review"
+      ],
+      "th": [
+        "Pizza",
+        "Price (each)",
+        "Quantity",
+        ""
+      ],
+      "title": [
+        "Shopping Cart"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/ShoppingCart"
+}

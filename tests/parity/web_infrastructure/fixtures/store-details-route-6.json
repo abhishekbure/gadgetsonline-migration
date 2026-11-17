@@ -1,0 +1,25 @@
+{
+  "id": "store-details-route-6",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "#album-details p": [
+        "Laptops Type:",
+        "Latest Laptops in 2022 Description:",
+        "$ 169.00 Price:",
+        "Add to cart"
+      ],
+      "h2": [
+        "Notebook 14"
+      ],
+      "title": [
+        "Gadget - Notebook 14"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Details/6"
+}

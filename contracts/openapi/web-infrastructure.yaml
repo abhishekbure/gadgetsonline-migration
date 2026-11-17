@@ -1,0 +1,285 @@
+openapi: 3.0.3
+info:
+  title: GadgetsOnline Web Infrastructure API
+  description: ASP.NET Core migration of web_infrastructure module for GadgetsOnline e-commerce application
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5000
+    description: Local development server
+
+paths:
+  /Home/Index:
+    get:
+      summary: Get homepage with best sellers
+      operationId: getHomeIndex
+      tags:
+        - Home
+      responses:
+        '200':
+          description: Homepage with best sellers
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /Home/About:
+    get:
+      summary: Get about page
+      operationId: getHomeAbout
+      tags:
+        - Home
+      responses:
+        '200':
+          description: About page
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /Home/Contact:
+    get:
+      summary: Get contact page
+      operationId: getHomeContact
+      tags:
+        - Home
+      responses:
+        '200':
+          description: Contact page
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /Store/Index:
+    get:
+      summary: Get store homepage
+      operationId: getStoreIndex
+      tags:
+        - Store
+      responses:
+        '200':
+          description: Store homepage
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /Store/Browse:
+    get:
+      summary: Browse products by category
+      operationId: getStoreBrowse
+      tags:
+        - Store
+      parameters:
+        - name: category
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Category name to browse
+      responses:
+        '200':
+          description: Products in category
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: Category not found
+
+  /Store/Details/{id}:
+    get:
+      summary: Get product details
+      operationId: getStoreDetails
+      tags:
+        - Store
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Product ID
+      responses:
+        '200':
+          description: Product details
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: Product not found
+
+  /Store/CategoryMenu:
+    get:
+      summary: Get category menu (child action)
+      operationId: getStoreCategoryMenu
+      tags:
+        - Store
+      responses:
+        '200':
+          description: Category menu partial
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /ShoppingCart/Index:
+    get:
+      summary: Get shopping cart view
+      operationId: getShoppingCartIndex
+      tags:
+        - ShoppingCart
+      responses:
+        '200':
+          description: Shopping cart view
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /ShoppingCart/AddToCart:
+    post:
+      summary: Add item to cart
+      operationId: postShoppingCartAddToCart
+      tags:
+        - ShoppingCart
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: Product ID to add
+      responses:
+        '302':
+          description: Redirect to shopping cart index
+          headers:
+            Location:
+              schema:
+                type: string
+
+  /ShoppingCart/RemoveFromCart:
+    post:
+      summary: Remove item from cart
+      operationId: postShoppingCartRemoveFromCart
+      tags:
+        - ShoppingCart
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: Product ID to remove
+      responses:
+        '302':
+          description: Redirect to shopping cart index
+          headers:
+            Location:
+              schema:
+                type: string
+
+  /Checkout/Index:
+    get:
+      summary: Checkout entry point
+      operationId: getCheckoutIndex
+      tags:
+        - Checkout
+      responses:
+        '200':
+          description: Checkout page
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /Checkout/AddressAndPayment:
+    get:
+      summary: Get address and payment form
+      operationId: getCheckoutAddressAndPayment
+      tags:
+        - Checkout
+      responses:
+        '200':
+          description: Address and payment form
+          content:
+            text/html:
+              schema:
+                type: string
+    post:
+      summary: Process checkout with address and payment
+      operationId: postCheckoutAddressAndPayment
+      tags:
+        - Checkout
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                FirstName:
+                  type: string
+                LastName:
+                  type: string
+                Address:
+                  type: string
+                City:
+                  type: string
+                State:
+                  type: string
+                PostalCode:
+                  type: string
+                Country:
+                  type: string
+                Phone:
+                  type: string
+                Email:
+                  type: string
+                  format: email
+      responses:
+        '302':
+          description: Redirect to order completion
+          headers:
+            Location:
+              schema:
+                type: string
+        '200':
+          description: Form redisplay with validation errors
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /Checkout/Complete/{id}:
+    get:
+      summary: Order completion page
+      operationId: getCheckoutComplete
+      tags:
+        - Checkout
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Order ID
+      responses:
+        '200':
+          description: Order completion page
+          content:
+            text/html:
+              schema:
+                type: string
+
+tags:
+  - name: Home
+    description: Homepage and informational pages
+  - name: Store
+    description: Product browsing and catalog
+  - name: ShoppingCart
+    description: Shopping cart operations
+  - name: Checkout
+    description: Checkout and order processing

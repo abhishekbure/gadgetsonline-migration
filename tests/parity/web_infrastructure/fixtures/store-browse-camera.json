@@ -1,0 +1,8 @@
+{
+  "id": "store-browse-camera",
+  "method": "GET",
+  "observation": {
+    "status": 200
+  },
+  "path": "/Store/Browse?category=Camera"
+}

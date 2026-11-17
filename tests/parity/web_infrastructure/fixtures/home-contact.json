@@ -1,0 +1,26 @@
+{
+  "id": "home-contact",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "address": [
+        "One Microsoft Way Redmond, WA 98052-6399 425.555.0100 P:",
+        "Support: Support@example.com Marketing: Marketing@example.com"
+      ],
+      "h2": [
+        "Contact."
+      ],
+      "h3": [
+        "Your contact page."
+      ],
+      "title": [
+        "Contact"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Home/Contact"
+}

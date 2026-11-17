@@ -1,0 +1,22 @@
+@model List<Product>
+@{
+    ViewBag.Title = "Welcome to Gadgets Online!";
+}
+
+<div id="promotion">
+
+</div>
+
+<h3><em>Our best selling </em>Gadgets Online.</h3>
+
+<ul id="album-list">
+    @foreach (var product in Model)
+    {
+        <li>
+            <a asp-controller="Store" asp-action="Details" asp-route-id="@product.ProductId">
+                <img alt="@product.Name" src="@product.ProductArtUrl" />
+                <span>@product.Name</span>
+            </a>
+        </li>
+    }
+</ul>

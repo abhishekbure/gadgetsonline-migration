@@ -1,0 +1,21 @@
+{
+  "id": "store-browse-laptops",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "title": [
+        "Browse Gadgets"
+      ],
+      "ul#album-list li span": [
+        "XTS 13'",
+        "PC 15.5'",
+        "Notebook 14"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Browse?category=Laptops"
+}

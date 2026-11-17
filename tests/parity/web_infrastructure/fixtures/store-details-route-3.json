@@ -1,0 +1,25 @@
+{
+  "id": "store-details-route-3",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "#album-details p": [
+        "Mobile Phones Type:",
+        "Latest collection of Mobile Phones Description:",
+        "$ 1199.00 Price:",
+        "Add to cart"
+      ],
+      "h2": [
+        "Phone 13 Pro Max"
+      ],
+      "title": [
+        "Gadget - Phone 13 Pro Max"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Details/3"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "cart-add-get-8",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "location": "/ShoppingCart"
+    },
+    "status": 302
+  },
+  "path": "/ShoppingCart/AddToCart?id=8"
+}

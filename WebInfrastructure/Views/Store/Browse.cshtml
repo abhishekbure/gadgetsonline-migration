@@ -1,0 +1,19 @@
+@model List<Product>
+
+@{
+    ViewBag.Title = "Browse Gadgets";
+}
+
+<div class="genre">
+    <ul id="album-list">
+        @foreach (var product in Model)
+        {
+            <li>
+                <a asp-controller="Store" asp-action="Details" asp-route-id="@product.ProductId">
+                    <img alt="@product.Name" src="@product.ProductArtUrl" />
+                    <span>@product.Name</span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>

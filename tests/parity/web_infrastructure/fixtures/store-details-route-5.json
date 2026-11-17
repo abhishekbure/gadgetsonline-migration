@@ -1,0 +1,25 @@
+{
+  "id": "store-details-route-5",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "#album-details p": [
+        "Laptops Type:",
+        "Latest Laptops in 2022 Description:",
+        "$ 479.00 Price:",
+        "Add to cart"
+      ],
+      "h2": [
+        "PC 15.5'"
+      ],
+      "title": [
+        "Gadget - PC 15.5'"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Details/5"
+}

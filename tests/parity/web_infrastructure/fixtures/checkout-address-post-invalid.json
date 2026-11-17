@@ -1,0 +1,6 @@
+{
+  "id": "checkout-address-post-invalid",
+  "method": "POST",
+  "observation": {},
+  "path": "/Checkout/AddressAndPayment"
+}

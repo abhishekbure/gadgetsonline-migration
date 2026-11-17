@@ -1,0 +1,25 @@
+{
+  "id": "store-details-route-13",
+  "method": "GET",
+  "observation": {
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "selectors": {
+      "#album-details p": [
+        "Accessories Type:",
+        "USB Cables, Mobile chargers and Keyboards etc Description:",
+        "$ 9.99 Price:",
+        "Add to cart"
+      ],
+      "h2": [
+        "Keyboard"
+      ],
+      "title": [
+        "Gadget - Keyboard"
+      ]
+    },
+    "status": 200
+  },
+  "path": "/Store/Details/13"
+}
